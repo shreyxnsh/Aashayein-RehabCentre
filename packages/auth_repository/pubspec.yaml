@@ -10,11 +10,30 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.2
+  google_fonts: ^3.0.1
+  flutter_native_splash: ^2.2.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/logo-acceptance.png
+  branding: assets/branding-acceptance.png
+  color_dark: "#121212"
+  image_dark: assets/logo-acceptance.png
+  branding_dark: assets/branding-acceptance.png
+
+  android_12:
+    image: assets/logo-acceptance.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo-acceptance.png
+    icon_background_color_dark: "#121212"
+
+  web: false
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
