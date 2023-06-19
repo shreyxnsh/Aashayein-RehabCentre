@@ -6,6 +6,7 @@ import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
 import 'package:rehabcentre/src/constants/text_strings.dart';
 import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
+import 'package:rehabcentre/src/features/screens/signup/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -62,6 +63,9 @@ class WelcomeScreen extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                     onPressed: () {
+                      Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SignupScreen()),);
                     }, 
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),

@@ -17,10 +17,15 @@ class LoginForm extends StatelessWidget {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person_outline_outlined),
+                        prefixIcon: Icon(Icons.person_outline_outlined,
+                        color: tSecondaryColor,),
                         labelText: 'Email',
                         hintText: 'Email',
                         border: OutlineInputBorder(),
+                        labelStyle: TextStyle(color: tSecondaryColor),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(width: 2.0, color: tSecondaryColor)
+                              )
                       ),
                     ),
                     SizedBox(
@@ -28,13 +33,19 @@ class LoginForm extends StatelessWidget {
                     ),
                     TextFormField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.fingerprint),
+                        prefixIcon: Icon(Icons.fingerprint,
+                        color: tSecondaryColor,),
                         labelText: 'Password',
                         hintText: 'Password',
                         border: OutlineInputBorder(),
+                        labelStyle: TextStyle(color: tSecondaryColor),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(width: 2.0, color: tSecondaryColor)
+                              ),
                         suffixIcon: IconButton(
                           onPressed: null,
                           icon: Icon(Icons.remove_red_eye_sharp),
+                          
                         )
                       ),
                     ),
