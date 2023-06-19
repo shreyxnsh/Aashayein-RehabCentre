@@ -76,6 +76,7 @@ flutter:
     - assets/images/splash-screen-image.png
     - assets/images/welcome-screen-image.png
     - assets/images/login-screen-image.png
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

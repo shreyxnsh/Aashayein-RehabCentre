@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
 import 'package:rehabcentre/src/constants/text_strings.dart';
+import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -40,7 +42,11 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: (){}, 
+                    onPressed: () {
+                      Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginScreen()),);
+                    }, 
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
                       foregroundColor: tSecondaryColor,
@@ -55,7 +61,8 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                   Expanded(
                     child: ElevatedButton(
-                    onPressed: (){}, 
+                    onPressed: () {
+                    }, 
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
                       foregroundColor: tWhiteColor,

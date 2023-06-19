@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/features/screens/splash_screen/splash_screen.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       theme: ThemeData(
+        primaryColor: tPrimaryColor,
 
       ),
       home: SplashScreen(),

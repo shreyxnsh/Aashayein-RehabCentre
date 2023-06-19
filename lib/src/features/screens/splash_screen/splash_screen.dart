@@ -5,6 +5,7 @@ import 'package:rehabcentre/src/constants/image_strings.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
 import 'package:rehabcentre/src/constants/text_strings.dart';
 import 'package:rehabcentre/src/features/screens/welcome/welcome_screen.dart';
+import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
