@@ -41,6 +41,9 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton.icon(
+                          style: ButtonStyle(
+    foregroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the text color here
+  ),
                           icon: Image(image: AssetImage(tGoogleLogo), width: 20.0,),
                           onPressed: (){}, label: Text('Sign-In with google'.toUpperCase(), style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 13),),
                       ),

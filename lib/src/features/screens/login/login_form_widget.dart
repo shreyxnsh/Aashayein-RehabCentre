@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:rehabcentre/src/constants/sizes.dart';
 
 import '../../../constants/colors.dart';
 
@@ -54,7 +55,23 @@ class LoginForm extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: TextButton(onPressed: (){}, child: Text('Forgot password ?'))),
+                      child: TextButton(onPressed: (){
+                        showModalBottomSheet(context: context, builder: (context) => Container(
+                          padding: EdgeInsets.all(tDefaultSize),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Make Selection', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),),
+                              Text('Make Selection', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),),
+                              SizedBox(
+                                height: 30.0,
+                              ),
+                              
+
+                            ],
+                          ),
+                        ),);
+                      }, child: Text('Forgot password ?'))),
 
                     Padding(
                      padding: EdgeInsets.only(top: 5, bottom: 20, left: 20, right: 20),

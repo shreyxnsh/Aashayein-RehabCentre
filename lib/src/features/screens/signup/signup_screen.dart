@@ -25,7 +25,40 @@ class SignupScreen extends StatelessWidget {
                    title: 'Get on-board!', 
                    subtitle: 'Fill in the form below to access the application'
                    ),
-                   SignupFormWidget()
+                   SignupFormWidget(),
+                   Column(
+                    children: [
+                      const Text('OR', style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 18),),
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton.icon(
+                          style: ButtonStyle(
+    foregroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the text color here
+  ),
+                          icon: Image(image: AssetImage(tGoogleLogo), width: 20.0,),
+                          onPressed: (){}
+                        , label: Text('Signin with Google'.toUpperCase(), 
+                        style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 13
+                        ),
+                        
+                        ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: (){}, 
+                      child: const Text.rich(
+                        TextSpan(
+                          text: "Already have an account?",style: TextStyle(fontFamily: 'PoppinsMedium', color: tSecondaryColor),
+                          children: [
+                            TextSpan(text: ' Login',
+                            style: TextStyle(fontFamily: 'PoppinsMedium', color: Colors.blue))
+                          ]
+                        )
+                        
+                        )
+                        )
+                    ],
+                   )
 
               ],
             ),
