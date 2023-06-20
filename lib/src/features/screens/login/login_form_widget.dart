@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
 
 import '../../../constants/colors.dart';
+import '../forgot_password/forgot_password_options/forgot_password_bottomsheet.dart';
+import '../forgot_password/forgot_password_options/forgot_password_sheet_widget.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -55,22 +57,9 @@ class LoginForm extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: TextButton(onPressed: (){
-                        showModalBottomSheet(context: context, builder: (context) => Container(
-                          padding: EdgeInsets.all(tDefaultSize),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Make Selection', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),),
-                              Text('Make Selection', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),),
-                              SizedBox(
-                                height: 30.0,
-                              ),
-                              
-
-                            ],
-                          ),
-                        ),);
+                      child: TextButton(
+                        onPressed: (){
+                        ForgotPasswordScreen.buildShowModalBottomSheet(context);
                       }, child: Text('Forgot password ?'))),
 
                     Padding(
@@ -94,4 +83,5 @@ class LoginForm extends StatelessWidget {
               ),
                 );
   }
+
 }
