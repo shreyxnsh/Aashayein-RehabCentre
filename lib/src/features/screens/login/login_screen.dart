@@ -28,8 +28,8 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   // section 1
                   Center(child: Image(image: AssetImage(tLoginScreenImage), height: size.height*0.3,)),
-                  Text('Welcome back!', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 24, ),),
-                  Text('Login to experience hassle-free appointments', style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 18, ),),
+                  Text('Welcome back!', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 22, ),),
+                  Text('Login to experience hassle-free appointments', style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 16, ),),
             
                   // section 2
                   LoginForm(),

@@ -14,9 +14,13 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      
       child: Scaffold(
+        
         body: SingleChildScrollView(
+
           child: Container(
+            margin: EdgeInsets.only(top: 10),
             padding: EdgeInsets.only(bottom: tDefaultSize, left: tDefaultSize, right: tDefaultSize),
             child: Column(
               children: [

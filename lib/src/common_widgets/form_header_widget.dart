@@ -27,8 +27,8 @@ class FormHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 24, ),),
-            Text(subtitle, style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 18, ),),
+              Text(title, style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 22, ),),
+            Text(subtitle, style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 16, ),),
             ],
           ),
           

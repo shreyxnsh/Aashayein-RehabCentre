@@ -35,10 +35,10 @@ class ForgotpasswordBtnWidget extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 16),
+                  style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 14),
                 ),
                 Text(subtitle, 
-                style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14)
+                style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 12)
                 )
               ],
             )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
+import 'package:rehabcentre/src/features/screens/forgot_password/forgot_password_otp/otp_screen.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/image_strings.dart';
@@ -60,7 +61,12 @@ class ForgotPasswordMailScreen extends StatelessWidget {
              backgroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the button color here
            ),
                      
-             onPressed: (){}, 
+             onPressed: (){
+Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OTPScreen()),);
+
+             }, 
              child: Text('Next'.toUpperCase(), style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14),),
              ),
          )

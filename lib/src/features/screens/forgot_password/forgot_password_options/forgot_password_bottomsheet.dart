@@ -15,8 +15,8 @@ class ForgotPasswordScreen{
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Make Selection', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 22),),
-                            Text('Select one of the options give below to reset your password', style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 16),),
+                            Text('Make Selection', style: TextStyle(fontFamily: 'PoppinsBold', fontSize: 20),),
+                            Text('Select one of the options give below to reset your password', style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14),),
                             SizedBox(
                               height: 30.0,
                             ),
@@ -36,7 +36,7 @@ class ForgotPasswordScreen{
                             ForgotpasswordBtnWidget(
                               btnIcon: Icons.phone_android_rounded,
                               title: 'Phone number',
-                              subtitle: 'Reset using Phone OTP verification',
+                              subtitle: 'Reset using OTP verification',
                               onTap: (){
 
                               },
