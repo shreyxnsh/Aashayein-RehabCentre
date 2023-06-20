@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rehabcentre/src/features/screens/forgot_password/forgot_password_mail/forgot_password_mail.dart';
 
 import '../../../../constants/sizes.dart';
 import 'forgot_password_sheet_widget.dart';
@@ -24,7 +25,9 @@ class ForgotPasswordScreen{
                               title: 'Email',
                               subtitle: 'Reset using E-mail verification',
                               onTap: (){
-
+                                Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ForgotPasswordMailScreen()),);
                               },
                             ),
                             SizedBox(
