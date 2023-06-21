@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "665865941975",
+    "project_id": "aashayein-c1861",
+    "storage_bucket": "aashayein-c1861.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665865941975:android:39ba5fa31bc0b5c9735192",
+        "android_client_info": {
+          "package_name": "com.example.rehabcentre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665865941975-j2tve9e4ej1de9gui6dfg7najpjrha9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu2f5Vn000aTiBLEuBi5_u97YHt1IMbXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665865941975-j2tve9e4ej1de9gui6dfg7najpjrha9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
