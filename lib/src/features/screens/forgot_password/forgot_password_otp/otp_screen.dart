@@ -26,13 +26,15 @@ class OTPScreen extends StatelessWidget {
                 height: 30,
                ),
                Text(tOtpMessgae + "\nshreyanshatwork@gmail.com", textAlign: TextAlign.center, style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 16)),
-               SizedBox(
+               SizedBox( 
                 height: 20,
                ),
                OtpTextField(
                 numberOfFields: 6,
                 fillColor: Colors.black.withOpacity(0.1),
                 filled: true,
+                cursorColor: Colors.black,
+                borderColor: Colors.black,
                 keyboardType: TextInputType.number,
                 onSubmit: (code){
 

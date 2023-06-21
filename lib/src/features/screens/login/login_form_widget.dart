@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
+import 'package:rehabcentre/src/features/screens/dashboard/dashboard.dart';
 
 import '../../../constants/colors.dart';
 import '../forgot_password/forgot_password_options/forgot_password_bottomsheet.dart';
@@ -72,7 +73,11 @@ class LoginForm extends StatelessWidget {
                           backgroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the button color here
                         ),
                                   
-                          onPressed: (){}, 
+                          onPressed: (){
+                            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Dashboard()),);
+                          }, 
                           child: Text('Login'.toUpperCase(), style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14),),
                           ),
                       ),
