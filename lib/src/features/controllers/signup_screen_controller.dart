@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../repositories/authentication_repository.dart';
+
 class SignUpController extends GetxController{
   static SignUpController get instance => Get.find();
   //esfse
@@ -14,7 +16,8 @@ class SignUpController extends GetxController{
   // function to register user from the design
   void registerUser(String email, String password){
     // function with firebase logic, user input data has been collected
-
+    AuthenticationRepository.instance.createUserWithEmailandPassword(email, password);
+    
 
   }
 
