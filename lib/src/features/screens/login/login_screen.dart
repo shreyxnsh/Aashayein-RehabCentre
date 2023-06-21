@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
+import 'package:rehabcentre/src/features/screens/signup/signup_screen.dart';
 
 import 'login_form_widget.dart';
 
@@ -51,7 +52,36 @@ class LoginScreen extends StatelessWidget {
                       ),
                       ),
                       TextButton(
-                        onPressed: (){}, 
+                        onPressed: (){
+                        //   Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) =>  LoginScreen()),
+                        // );
+
+                        Navigator.push(
+                          context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return SignupScreen();
+                },
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  var begin = Offset(-1.0, 0.0);
+                  var end = Offset.zero;
+                  var tween = Tween(begin: begin, end: end);
+                  var offsetAnimation = animation.drive(tween);
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                    },
+                    transitionDuration: Duration(milliseconds: 200),
+              ),
+                
+                        );
+              
+                        },  
                       child: const Text.rich(
                         TextSpan(
                           text: "Don't have an account?",style: TextStyle(fontFamily: 'PoppinsMedium', color: tSecondaryColor),

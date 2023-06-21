@@ -15,7 +15,6 @@ class SignupFormWidget extends StatelessWidget {
     final controller = Get.put(SignUpController());
     final _formKey = GlobalKey<FormState>();
 
-
     return Container(
      padding: const EdgeInsets.symmetric(vertical: 20),
      child: Form(
@@ -44,8 +43,10 @@ class SignupFormWidget extends StatelessWidget {
 
            TextFormField(
             controller: controller.email,
+          
              decoration: const InputDecoration(
                label: Text('E-mail'),
+               
                border: OutlineInputBorder(),
                prefixIcon: Icon(
                  Icons.email_outlined,
@@ -104,6 +105,7 @@ class SignupFormWidget extends StatelessWidget {
          SizedBox(  
          width: double.infinity,
          child: ElevatedButton(
+          
            
            style: ButtonStyle(
            backgroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the button color here

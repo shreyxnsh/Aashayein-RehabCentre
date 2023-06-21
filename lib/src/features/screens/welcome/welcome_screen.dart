@@ -45,8 +45,26 @@ class WelcomeScreen extends StatelessWidget {
                   child: OutlinedButton(
                     onPressed: () {
                       Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  LoginScreen()),);
+                          context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return LoginScreen();
+                },
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  var begin = Offset(-1.0, 0.0);
+                  var end = Offset.zero;
+                  var tween = Tween(begin: begin, end: end);
+                  var offsetAnimation = animation.drive(tween);
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                    },
+                    transitionDuration: Duration(milliseconds: 200),
+              ),
+                
+                        );
                     }, 
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
@@ -64,8 +82,26 @@ class WelcomeScreen extends StatelessWidget {
                     child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SignupScreen()),);
+                          context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return SignupScreen();
+                },
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  var begin = Offset(-1.0, 0.0);
+                  var end = Offset.zero;
+                  var tween = Tween(begin: begin, end: end);
+                  var offsetAnimation = animation.drive(tween);
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                    },
+                    transitionDuration: Duration(milliseconds: 200),
+              ),
+                
+                        );
                     }, 
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),

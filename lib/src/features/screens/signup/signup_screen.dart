@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:rehabcentre/src/common_widgets/form_header_widget.dart';
 import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
+import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
 import 'package:rehabcentre/src/features/screens/signup/signup_form_widget.dart';
 
 import '../../../constants/sizes.dart';
@@ -18,6 +19,7 @@ class SignupScreen extends StatelessWidget {
       child: Scaffold(
         
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
 
           child: Container(
             margin: EdgeInsets.only(top: 10),
@@ -49,7 +51,36 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: (){}, 
+                        onPressed: (){
+                        //   Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) =>  LoginScreen()),
+                        // );
+
+                        Navigator.push(
+                          context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return LoginScreen();
+                },
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  var begin = Offset(-1.0, 0.0);
+                  var end = Offset.zero;
+                  var tween = Tween(begin: begin, end: end);
+                  var offsetAnimation = animation.drive(tween);
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                    },
+                    transitionDuration: Duration(milliseconds: 200),
+              ),
+                
+                        );
+              
+                        }, 
                       child: const Text.rich(
                         TextSpan(
                           text: "Already have an account?",style: TextStyle(fontFamily: 'PoppinsMedium', color: tSecondaryColor),
