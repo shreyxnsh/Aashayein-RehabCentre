@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "665865941975-3ntrh506uq8844bf3nh1hja9reci3v5p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rehabcentre",
+            "certificate_hash": "3ff79e3dacdca4b6f2ac494ff0132003484bb834"
+          }
+        },
+        {
           "client_id": "665865941975-j2tve9e4ej1de9gui6dfg7najpjrha9u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "665865941975-j2tve9e4ej1de9gui6dfg7najpjrha9u.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "665865941975-hlbve0s4e3oeh98uvuqta9lrk7ucu131.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rehabcentre"
+              }
             }
           ]
         }

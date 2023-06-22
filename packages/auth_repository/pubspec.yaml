@@ -41,9 +41,9 @@ flutter_native_splash:
 # The following section is specific to Flutter packages.
 flutter:
 
-  # To add assets to your package, add an assets section, like this:
-  assets:
-    -assets/splash-screen-image.png
+  # # To add assets to your package, add an assets section, like this:
+  # assets:
+  #   -assets/splash-screen-image.png
 
     
   #

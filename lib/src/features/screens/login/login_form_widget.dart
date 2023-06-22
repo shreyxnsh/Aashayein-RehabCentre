@@ -22,6 +22,8 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FocusNode _focusNode = FocusNode();
+
     return Form(
       child: Container(
         margin: EdgeInsets.only(top: 10.0),
@@ -51,6 +53,8 @@ class LoginForm extends StatelessWidget {
             TextFormField(
               // controller takes the user input to check with the database
               controller: _passwordController,
+              focusNode: _focusNode,
+              
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.fingerprint,
@@ -88,6 +92,7 @@ class LoginForm extends StatelessWidget {
                         tSecondaryColor), // Change the button color here
                   ),
                   onPressed: () async {
+                    _focusNode.requestFocus();
                     final email = _emailController.text;
                     final password = _passwordController.text;
                     try {

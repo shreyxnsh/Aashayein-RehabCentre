@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '665865941975',
     projectId: 'aashayein-c1861',
     storageBucket: 'aashayein-c1861.appspot.com',
+    androidClientId: '665865941975-3ntrh506uq8844bf3nh1hja9reci3v5p.apps.googleusercontent.com',
     iosClientId: '665865941975-hlbve0s4e3oeh98uvuqta9lrk7ucu131.apps.googleusercontent.com',
     iosBundleId: 'com.example.rehabcentre',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '665865941975',
     projectId: 'aashayein-c1861',
     storageBucket: 'aashayein-c1861.appspot.com',
+    androidClientId: '665865941975-3ntrh506uq8844bf3nh1hja9reci3v5p.apps.googleusercontent.com',
     iosClientId: '665865941975-hlbve0s4e3oeh98uvuqta9lrk7ucu131.apps.googleusercontent.com',
     iosBundleId: 'com.example.rehabcentre',
   );

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rehabcentre/src/features/controllers/signup_screen_controller.dart';
+import 'package:rehabcentre/src/features/screens/forgot_password/forgot_password_otp/otp_screen.dart';
+
+
 
 import '../../../constants/colors.dart';
 
@@ -13,6 +16,7 @@ class SignupFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
+
     final _formKey = GlobalKey<FormState>();
 
     return Container(
@@ -114,7 +118,10 @@ class SignupFormWidget extends StatelessWidget {
            onPressed: (){
             if(_formKey.currentState!.validate()){
               // this assigns the user input to variables which will be sent to firebase
-              SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+              // SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+              SignUpController.instance.phoneAuth(controller.phoneNo.text.trim());
+              Get.to(() => const OTPScreen());
+
             }
            }, 
            child: Text('Signup'.toUpperCase(), style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14),),

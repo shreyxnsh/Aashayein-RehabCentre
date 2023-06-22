@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
 import 'package:rehabcentre/src/constants/text_strings.dart';
+import 'package:rehabcentre/src/features/controllers/otp_controller.dart';
 
 import '../../../../constants/colors.dart';
 
@@ -12,6 +15,8 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var otpController = Get.put(OTPController());
+    var otp;
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -37,7 +42,8 @@ class OTPScreen extends StatelessWidget {
                 borderColor: Colors.black,
                 keyboardType: TextInputType.number,
                 onSubmit: (code){
-
+                  otp = code;
+                  OTPController.instance.verifyOTP(otp);
                 },
                ),
                SizedBox(
@@ -49,7 +55,9 @@ class OTPScreen extends StatelessWidget {
                   style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the button color here
                         ),
-                  onPressed: (){},
+                  onPressed: (){
+                    OTPController.instance.verifyOTP(otp);
+                  },
                   child: Text('Next'.toUpperCase(), style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14),),),
                   
                )

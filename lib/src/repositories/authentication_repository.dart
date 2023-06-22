@@ -1,3 +1,5 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -12,6 +14,7 @@ class AuthenticationRepository extends GetxController {
   // variables
   final _auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
+  var verificationId = ''.obs;
 
   @override
   void onReady() {
@@ -61,4 +64,39 @@ class AuthenticationRepository extends GetxController {
   }
 
   Future<void>  logout() async => await _auth.signOut();
+
+  Future<void> phoneAuthentication(String phoneNo) async {
+
+    // for making the queries run asynchronously write await keyword
+    await _auth.verifyPhoneNumber(
+      phoneNumber: phoneNo,
+      verificationCompleted: (credential) async {
+        await _auth.signInWithCredential(credential);
+
+      }, 
+      verificationFailed: (e){
+         if(e.code == 'invalid-phone-number'){
+          Get.snackbar('Error', 'The provided phone number is not valid.');
+         } else{
+          Get.snackbar("Error", "Something went wrong, try again.");
+         }
+      }, 
+      codeSent: (verificationId, resendToken){
+        this.verificationId.value = verificationId;
+      }, 
+      codeAutoRetrievalTimeout: (verificationId){
+        this.verificationId.value = verificationId;
+      }
+      );
+
+  }
+
+  Future<bool> verifyOTP(String otp) async{
+    var credentials = 
+    await _auth.signInWithCredential(
+      PhoneAuthProvider.
+      credential(verificationId: this.verificationId.value, smsCode: otp));
+
+      return credentials.user != null ? true : false;
+  }
 }
