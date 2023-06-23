@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:rehabcentre/src/constants/colors.dart';
+import 'package:rehabcentre/src/features/screens/profile/profile_screen.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -31,7 +34,9 @@ class Dashboard extends StatelessWidget {
                 
               ),
               child: IconButton(
-                onPressed: (){},
+                onPressed: (){
+                  Get.to(() => ProfileScreen());
+                },
                 icon: Icon(Icons.person, color: Colors.black,)),
             )
           ],
