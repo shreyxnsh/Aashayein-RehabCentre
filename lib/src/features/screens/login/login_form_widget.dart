@@ -34,6 +34,7 @@ class LoginForm extends StatelessWidget {
             TextFormField(
               // controller takes the user input to check with the database
               controller: _emailController,
+              
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.person_outline_outlined,

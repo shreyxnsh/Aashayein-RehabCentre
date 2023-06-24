@@ -58,19 +58,22 @@ class ProfileScreen extends StatelessWidget {
                     Positioned(
                       bottom: 0,
                       right: 0,
-                      child: Container(
-                        width: 35,
-                        height: 35,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: tPrimaryColor,
+                      child: GestureDetector(
+                        onTap: (){},
+                        child: Container(
+                          width: 35,
+                          height: 35, 
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: tPrimaryColor,
+                          ),
+                          child: Icon(
+                            LineAwesomeIcons.alternate_pen,
+                            size: 20,
+                            color: Colors.black,
+                          ),
                         ),
-                        child: Icon(
-                          LineAwesomeIcons.alternate_pen,
-                          size: 20,
-                          color: Colors.black,
-                        ),
-                      ),
+                      ),    
                     ),
                   ],
                 ),
