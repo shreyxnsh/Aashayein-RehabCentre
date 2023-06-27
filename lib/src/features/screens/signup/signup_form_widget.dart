@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rehabcentre/src/features/controllers/signup_screen_controller.dart';
+import 'package:rehabcentre/src/features/models/user_model.dart';
 import 'package:rehabcentre/src/features/screens/forgot_password/forgot_password_otp/otp_screen.dart';
 
 
@@ -117,9 +118,19 @@ class SignupFormWidget extends StatelessWidget {
                    
            onPressed: (){
             if(_formKey.currentState!.validate()){
-              // this assigns the user input to variables which will be sent to firebase
+              // Email password Auth
               // SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
-              SignUpController.instance.phoneAuth(controller.phoneNo.text.trim());
+
+              // Phone Auth
+              // SignUpController.instance.phoneAuth(controller.phoneNo.text.trim());
+
+              final user = UserModal(
+                email: controller.email.text.trim(),
+                phoneNo: controller.phoneNo.text.trim(), 
+                password: controller.password.text.trim(), 
+                fullname: controller.fullName.text.trim(),
+                );
+                SignUpController.instance.createUser(user);
               Get.to(() => const OTPScreen());
 
             }

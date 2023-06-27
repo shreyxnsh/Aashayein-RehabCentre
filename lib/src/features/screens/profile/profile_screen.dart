@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -7,12 +8,16 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
 import 'package:rehabcentre/src/constants/text_strings.dart';
 import 'package:rehabcentre/src/constants/sizes.dart';
+import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
+import 'package:rehabcentre/src/repositories/authentication_repository.dart';
 import 'package:rehabcentre/src/features/screens/profile/update_profile_screen.dart';
 
 import '../../../constants/colors.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key});
+
+  final authRepo = Get.put(AuthenticationRepository());
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +165,14 @@ class ProfileScreen extends StatelessWidget {
                   title: 'Logout',
                   textColor: Colors.red,
                   icon: LineAwesomeIcons.alternate_sign_out,
-                  onPress: () {},
+                  onPress: () async {
+                    FirebaseAuth _auth = FirebaseAuth.instance;
+    await _auth.signOut();
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreen()),
+    );
+                  },
                   endIcon: false,
                 ),
               ],

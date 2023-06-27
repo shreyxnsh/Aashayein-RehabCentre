@@ -1,11 +1,15 @@
 
 
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:rehabcentre/src/exceptions/signup_failure.dart';
 import 'package:rehabcentre/src/features/screens/dashboard/dashboard.dart';
+import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
+import 'package:rehabcentre/src/features/screens/profile/profile_screen.dart';
 import 'package:rehabcentre/src/features/screens/welcome/welcome_screen.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -29,6 +33,17 @@ class AuthenticationRepository extends GetxController {
   // this function will check if the user is authenticated, if yes it will redirect to Dashboard
   _setInitialScreen(User? user) {
     user == null ? Get.offAll(() => const WelcomeScreen()) : Get.offAll(() => Dashboard()) ;
+  }
+
+  Future<void> sendEmailVerification() async {
+    try {
+    await  _auth.currentUser?.sendEmailVerification();
+} on FirebaseAuthException catch (e) {
+  print(e);
+  // TODO
+}
+    
+
   }
 
   Future<void> createUserWithEmailandPassword(
@@ -63,7 +78,9 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  Future<void>  logout() async => await _auth.signOut();
+  Future<void>  logout() async => 
+  await _auth.signOut().then(( ProfileScreen) => LoginScreen())
+  ;
 
   Future<void> phoneAuthentication(String phoneNo) async {
 
