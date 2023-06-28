@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:rehabcentre/src/features/models/user_model.dart';
 import 'package:rehabcentre/src/repositories/authentication_repository.dart';
 import 'package:rehabcentre/src/repositories/user_repository.dart';
 
@@ -18,6 +19,11 @@ class ProfileController extends GetxController{
     }else{
       Get.snackbar("Error", "Something went wrong");
     }
+
+  }
+
+  Future<List<UserModal>> getAllUsers() async{
+    return await _userRepo.allUserDetails(); 
 
   }
 
