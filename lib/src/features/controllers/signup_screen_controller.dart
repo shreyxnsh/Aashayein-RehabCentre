@@ -32,6 +32,9 @@ class SignUpController extends GetxController{
     await userRepo.createUser(user);
     // authenticate user
     phoneAuth(user.phoneNo);
+
+    // email auth
+    
     // redirect to otp screen
     Get.to(() => OTPScreen());
   }

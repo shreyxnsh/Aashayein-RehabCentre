@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -116,7 +117,7 @@ class SignupFormWidget extends StatelessWidget {
            backgroundColor: MaterialStateProperty.all<Color>(tSecondaryColor), // Change the button color here
          ),
                    
-           onPressed: (){
+           onPressed: () async {
             if(_formKey.currentState!.validate()){
               // Email password Auth
               // SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
@@ -130,7 +131,15 @@ class SignupFormWidget extends StatelessWidget {
                 password: controller.password.text.trim(), 
                 fullname: controller.fullName.text.trim(),
                 );
+
+              
                 SignUpController.instance.createUser(user);
+                
+              // this will take the user email and password and authenticate it as a user for further login
+                UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: controller.email.text.trim(),
+        password: controller.password.text.trim(), 
+      );
               Get.to(() => const OTPScreen());
 
             }

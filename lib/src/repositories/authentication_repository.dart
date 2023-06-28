@@ -9,6 +9,7 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:rehabcentre/src/exceptions/signup_failure.dart';
 import 'package:rehabcentre/src/features/screens/dashboard/dashboard.dart';
 import 'package:rehabcentre/src/features/screens/login/login_screen.dart';
+import 'package:rehabcentre/src/features/screens/mail_verification/mail_verification.dart';
 import 'package:rehabcentre/src/features/screens/profile/profile_screen.dart';
 import 'package:rehabcentre/src/features/screens/welcome/welcome_screen.dart';
 
@@ -27,12 +28,16 @@ class AuthenticationRepository extends GetxController {
     firebaseUser = Rx<User?>(_auth.currentUser);
     // to get notified about any change in firebase
     firebaseUser.bindStream(_auth.userChanges());
-    ever(firebaseUser, _setInitialScreen);
+    setInitialScreen(firebaseUser.value);
+    // ever(firebaseUser, _setInitialScreen);
   }
 
   // this function will check if the user is authenticated, if yes it will redirect to Dashboard
-  _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() => const WelcomeScreen()) : Get.offAll(() => Dashboard()) ;
+  setInitialScreen(User? user) {
+    user == null ? 
+    Get.offAll(() => const WelcomeScreen()) 
+    : user.emailVerified ? Get.offAll(() => Dashboard()) 
+    : Get.offAll(() => MailVerification()) ;
   }
 
   Future<void> sendEmailVerification() async {
