@@ -35,4 +35,28 @@ class UserRepository extends GetxController {
       
       ;
   }
+
+  // fetch single record of user data 
+  Future<UserModal> getUserDetails(String email) async {
+
+    // fetching the data of the users in snapshot variable
+    // write collection name and attribute in where to find data accordingly
+    final snapshot = await _db.collection("Users").where("Email", isEqualTo: email).get();
+    
+    // convert snapshot to a list 
+    final userData = snapshot.docs.map((e) => UserModal.fromSnapshot(e)).single;
+    return userData;
+  }
+
+  // fetch record of all users in a list of UserModal
+  Future<List<UserModal>> allUserDetails(String email) async {
+
+    // fetching the data of the users in snapshot variable
+    // write collection name and attribute in where to find data accordingly
+    final snapshot = await _db.collection("Users").get();
+    
+    // convert snapshot to a list 
+    final userData = snapshot.docs.map((e) => UserModal.fromSnapshot(e)).toList();
+    return userData;
+  }
 }

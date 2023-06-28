@@ -29,7 +29,7 @@ class AuthenticationRepository extends GetxController {
     // to get notified about any change in firebase
     firebaseUser.bindStream(_auth.userChanges());
     setInitialScreen(firebaseUser.value);
-    // ever(firebaseUser, _setInitialScreen);
+    ever(firebaseUser, setInitialScreen);
   }
 
   // this function will check if the user is authenticated, if yes it will redirect to Dashboard
