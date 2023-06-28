@@ -49,7 +49,7 @@ class UserRepository extends GetxController {
   }
 
   // fetch record of all users in a list of UserModal
-  Future<List<UserModal>> allUserDetails(String email) async {
+  Future<List<UserModal>> allUserDetails() async {
 
     // fetching the data of the users in snapshot variable
     // write collection name and attribute in where to find data accordingly
