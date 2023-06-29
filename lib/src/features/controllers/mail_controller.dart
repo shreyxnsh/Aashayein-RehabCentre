@@ -33,7 +33,7 @@ class MailController extends GetxController{
 
   void setTimerForAutoRedirect() {  
     _timer = Timer.periodic(Duration(seconds: 3), (timer) {
-      FirebaseAuth.instance.currentUser?.reload();
+      // FirebaseAuth.instance.currentUser?.reload();
       final user = FirebaseAuth.instance.currentUser;
       if(user!.emailVerified){
         timer.cancel();
