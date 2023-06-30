@@ -45,6 +45,7 @@ class AuthenticationRepository extends GetxController {
     await  _auth.currentUser?.sendEmailVerification();
 } on FirebaseAuthException catch (e) {
   print(e);
+  
   // TODO
 }
     
@@ -57,6 +58,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
+      // FirebaseAuth.instance.currentUser.email 
       
     }catch(_){
 
@@ -69,7 +71,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.signInWithEmailAndPassword(
           email: email, password: password);
           // if user is already validated, return to dashboard
-          firebaseUser.value != null ? Get.offAll(() => const Dashboard()) : Get.to(() => const WelcomeScreen());
+          firebaseUser.value != null ? Get.offAll(() =>  Dashboard()) : Get.to(() => const WelcomeScreen());
 
     } on FirebaseAuthException catch (e) {
       final ex = SignupWithEmailAndPasswordFailure.code(e.code);

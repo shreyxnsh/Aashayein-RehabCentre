@@ -1,9 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:rehabcentre/src/features/models/user_model.dart';
+import 'package:rehabcentre/src/features/screens/profile/profile_screen.dart';
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
@@ -45,6 +48,19 @@ class UserRepository extends GetxController {
     
     // convert snapshot to a list 
     final userData = snapshot.docs.map((e) => UserModal.fromSnapshot(e)).single;
+    ProfileScreen.userData = userData;
+    return userData;
+  }
+  // fetch single record of user data 
+  Future<UserModal> getDisabilityDetails(String email) async {
+
+    // fetching the data of the users in snapshot variable
+    // write collection name and attribute in where to find data accordingly
+    final snapshot = await _db.collection("RehabCentre").where("Email", isEqualTo: email).get();
+    
+    // convert snapshot to a list 
+    final userData = snapshot.docs.map((e) => UserModal.fromSnapshot(e)).single;
+    ProfileScreen.userData = userData;
     return userData;
   }
 
