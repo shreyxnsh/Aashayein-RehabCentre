@@ -66,3 +66,32 @@
                 //       // Get.to(() => ProfileScreen());
                 //     },
                 //     child: Text("Book")),
+
+
+                  // return ListView.builder(
+                          //     shrinkWrap: true,
+                          //     // scrollDirection: Axis.horizontal,
+                          //     itemCount: snapshot.data!.length,
+                          //     itemBuilder: (c, index) {
+                          //       return Column(
+                          //         children: [
+                                    
+                          //           ListTile(
+                          //             iconColor: Colors.blue,
+                          //             tileColor: Colors.blue.withOpacity(0.1),
+                          //             leading: Icon(LineAwesomeIcons.user),
+                          //             title: Text(
+                          //                 "Name : ${snapshot.data![index].fullname}"),
+                          //             subtitle: Column(
+                          //               crossAxisAlignment:
+                          //                   CrossAxisAlignment.start,
+                          //               children: [
+                          //                 Text(snapshot.data![index].phoneNo),
+                          //                 Text(snapshot.data![index].email),
+                          //               ],
+                          //             ),
+                          //           )
+                          //         ],
+                          //       );
+                          //     }
+                          //     );

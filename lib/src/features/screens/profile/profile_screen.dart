@@ -17,6 +17,9 @@ import '../../controllers/profile_controller.dart';
 import '../../models/user_model.dart';
 
 class ProfileScreen extends StatelessWidget {
+
+  static UserModal? userData;
+
   ProfileScreen({super.key});
 
   final authRepo = Get.put(AuthenticationRepository());
@@ -176,7 +179,7 @@ class ProfileScreen extends StatelessWidget {
                     textColor: Colors.red,
                     icon: LineAwesomeIcons.alternate_sign_out,
                     onPress: () async {
-                      FirebaseAuth _auth = FirebaseAuth.instance;
+                      FirebaseAuth _auth = await FirebaseAuth.instance;
                 await _auth.signOut();
                 Navigator.pushReplacement(
                   context,

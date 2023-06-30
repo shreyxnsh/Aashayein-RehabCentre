@@ -13,6 +13,9 @@ import '../../../constants/colors.dart';
 import '../../../constants/image_strings.dart';
 
 class UpdateProfileScreen extends StatelessWidget {
+
+
+  
   const UpdateProfileScreen({super.key});
 
   @override
