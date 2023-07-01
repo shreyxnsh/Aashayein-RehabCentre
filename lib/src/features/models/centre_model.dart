@@ -33,21 +33,18 @@ class CentreModal{
   }
 
   // map user fetched from firebase to user model
-  factory CentreModal.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document){
-
-    final data = document.data()!;
-
-
-    return CentreModal(
-      id: document.id,
-      state: data["state"], 
-      category: data["category"], 
-      contact: data["contact"], 
-      name: data["name"],
-      address: data["address"],
-      about: data["about"],
-      );
-  }
+  static CentreModal fromSnapshot(DocumentSnapshot document) {
+  final data = document.data() as Map<String, dynamic>;
+  return CentreModal(
+    id: document.id,
+    state: data["state"] as String,
+    category: data["category"] as String,
+    contact: data["contact"] as String,
+    name: data["name"] as String,
+    address: data["address"] as String,
+    about: data["about"] as String,
+  );
+}
 
 
 }

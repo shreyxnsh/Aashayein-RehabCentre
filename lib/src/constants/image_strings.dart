@@ -6,6 +6,6 @@ const String tLoginScreenImage = "assets/images/login-screen-image.png";
 const String tGoogleLogo = "assets/images/google-logo.png";
 const String tForgotImage = "assets/images/forgot-screen-image.png";
 const String tProfileImage = "assets/images/profile-image.png";
-const String tAustismImage = "assets/images/austismiconng";
+const String tAustismImage = "assets/images/autismicon.png";
 const String tLearningImage = "assets/images/learningicon.png";
 const String tSpeechImage = "assets/images/speechicon.png";
