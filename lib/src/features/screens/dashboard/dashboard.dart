@@ -1,16 +1,20 @@
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:rehabcentre/src/constants/colors.dart';
+import 'package:rehabcentre/src/constants/image_strings.dart';
+import 'package:rehabcentre/src/features/screens/categories/AutismScreen.dart';
+import 'package:rehabcentre/src/features/screens/categories/LearningScreen.dart';
+import 'package:rehabcentre/src/features/screens/categories/SpeechScreen.dart';
+
 import 'package:rehabcentre/src/features/screens/profile/profile_screen.dart';
+import 'package:rehabcentre/src/utils/DummyScreen.dart';
 import 'package:rehabcentre/src/utils/rehabcentre.dart';
 
 import '../../../repositories/authentication_repository.dart';
@@ -21,6 +25,7 @@ class Dashboard extends StatelessWidget {
   Dashboard({super.key});
 
   final authRepo = Get.put(AuthenticationRepository());
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ProfileController());
@@ -28,7 +33,6 @@ class Dashboard extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-
           leading: const Icon(
             Icons.menu,
             color: Colors.black,
@@ -75,21 +79,24 @@ class Dashboard extends StatelessWidget {
                         if (snapshot.hasData) {
                           UserModal userData = snapshot.data as UserModal;
 
-                          return Column(children: [
-                            Text(
-                              "Hello, ",
-                              style: TextStyle(
-                                  fontFamily: 'PoppinsMedium', fontSize: 20),
-                            ),
-                            Text(
-                              "${userData.fullname}",
-                              style: TextStyle(
-                                  fontFamily: 'PoppinsBold', fontSize: 20),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ]);
+                          return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Hello, ",
+                                  style: TextStyle(
+                                      fontFamily: 'PoppinsMedium',
+                                      fontSize: 20),
+                                ),
+                                Text(
+                                  "${userData.fullname}",
+                                  style: TextStyle(
+                                      fontFamily: 'PoppinsBold', fontSize: 20),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                              ]);
                         } else if (snapshot.hasError) {
                           return Center(
                             child: Text(snapshot.error.toString()),
@@ -112,29 +119,140 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
+                     
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Disabilities',
+                        'Categories',
                         style:
                             TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),
                       ),
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
+
+                    // now create a list view which will be horizontally scrollable with 4 cards with icons title and subtitle and it should have on tap function too to navigate to different screens
+                    SizedBox(
+                      height: 120,
+                      child: ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => AutismScreen());
+                            },
+                            child: Container(
+                              width: 170,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: tCardBgColor,
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Image.asset(tAustismImage,height: 30,width: 30,),
+                                  Text(
+                                    "Autism",
+                                    style: TextStyle(
+                                        fontFamily: 'PoppinsMedium',
+                                        fontSize: 18),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => SpeechScreen());
+                            },
+                            child: Container(
+                              width: 170,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: tCardBgColor,
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+
+                                  Image.asset(tSpeechImage,height: 30,width: 30,),
+                                  Text(
+                                    "Speech",
+                                    style: TextStyle(
+                                        fontFamily: 'PoppinsMedium',
+                                        fontSize: 18),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => LearningScreen());
+                            },
+                            child: Container(
+                              width: 170,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: tCardBgColor,
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+
+                                  Image.asset(tLearningImage,height: 30,width: 30,),
+                                  Text(
+                                    "Learning Disability",
+                                    style: TextStyle(
+                                        fontFamily: 'PoppinsMedium',
+                                        fontSize: 16),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Recent Activities',
+                        style:
+                            TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+
+
                   ],
                 ),
-
-                SizedBox(
-                  height: 45,
-                  child: ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      
-                    ],
-                  ),
-                ),
-
                 
+
+               
+                //
               ],
             ),
           ),
