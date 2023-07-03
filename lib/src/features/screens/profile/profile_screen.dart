@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -13,6 +16,7 @@ import 'package:rehabcentre/src/repositories/authentication_repository.dart';
 import 'package:rehabcentre/src/features/screens/profile/update_profile_screen.dart';
 
 import '../../../constants/colors.dart';
+import '../../../utils/rehabcentre.dart';
 import '../../controllers/profile_controller.dart';
 import '../../models/user_model.dart';
 
@@ -23,6 +27,11 @@ class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
 
   final authRepo = Get.put(AuthenticationRepository());
+        FirebaseFirestore db =  FirebaseFirestore.instance;
+
+                      var uid =  FirebaseAuth.instance.currentUser!.uid;
+                      var details =  FirebaseAuth.instance.currentUser;
+
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +158,16 @@ class ProfileScreen extends StatelessWidget {
                   ProfileMenuWidget(
                     title: 'Settings',
                     icon: LineAwesomeIcons.cog,
-                    onPress: () {},
+                    onPress: () async {
+                      // add data in firestore
+                      // log('click');
+                      // int varr = 1;
+                      // for (var i in rehabData) {
+                      //   await db.collection("RehabCentre").add(i);
+                      //   log((varr++).toString());
+                      // }
+                      // log("done dana done !!");
+                    },
                   ),
                   ProfileMenuWidget(
                     title: 'Billing Details',

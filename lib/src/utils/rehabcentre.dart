@@ -29,7 +29,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Emmanuel's rehabilitation Foundation",
         "address": "Lekhi village, near truck terminals, Naharlagun, Arunachal Pradesh 791109",
         "contact": "088373 12695",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Emmanuel's Rehabilitation Centre is a non-profit organization dedicated to providing holistic rehabilitation services to autistic children in Arunachal Pradesh. The centre was founded in 2010 by a group of parents of autistic children who were inspired by the story of Emmanuel, a young boy with autism who overcame his challenges and went on to live a successful life.The centre's team of experienced professionals is committed to providing individualized care to each child. The centre also works closely with the children's families to ensure that they have the support they need to help their child reach their full potential.Emmanuel's Rehabilitation Centre is a beacon of hope for autistic children and their families in Arunachal Pradesh. The centre's dedicated team is working tirelessly to make a difference in the lives of these children and their families. If you are interested in learning more about the centre or in supporting its work, please visit its website or contact its office."
     },
     {
@@ -53,7 +53,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Saint Alphonsa public School",
         "address": "Model, Papum Pare, NH-52A, Itanagar Road, Naharlagun, Naharlagun, Arunachal Pradesh 791110",
         "contact": "094029 35801",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Saint Alphonsa Public School had a very humble beginning in 2015 with a group of students from Kindergarten to Class IV. Blessing of the school and the academic year inauguration was done by Rev. Fr. Jacob Mattathilani, Vicar General of Itanagar Diocese along with Fr Sebastian Vicar, St Infant Church, Doimukh and Rev. Fathers of St Patric Seminary, Model Village.Saint Alphonsa Public School is to impart good education with emphasis on basic values to present day students. The aim of the school is to promote a feeling of patriotism and sense of oneness and belongingness. The basic cultural values of our country, which have since time immemorial withstood all negative forces, are instilled into the students. The students are helped to gain the strength and skill to face the future boldly."
     },
     {
@@ -61,7 +61,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Uttaran Special Education Foundation",
         "address": "5QM8+HM3, Opposite Goswami Service, Sonadhar Senapati Path, Silpukhuri, MRD Road, Guwahati, Assam 781003",
         "contact": "098640 59608",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Uttaran Special Education Foundation is a non-profit organization dedicated to providing special education and training to autistic children in Assam. The foundation was founded in 2003 by a group of parents of autistic children who were inspired by the story of Uttaran, a young girl with autism who overcame her challenges and went on to live a successful life.It is open to children from all over the state. The cost of services is subsidized for families who cannot afford to pay the full cost. The foundation offers a scholarship program for children who are unable to afford the cost of services. The foundation is supported by donations from individuals and organizations."
     },
     {
@@ -77,7 +77,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Utkarsh Autism Centre",
         "address": "2 H/77Bahadurpur Housing Colony, near Bhootnath Road, Mahatma Gandhi Nagar, Kankarbagh, Patna, Bihar 800026",
         "contact": "082943 70626",
-        "category": "Austism",
+        "category": "Autism",
         "about": "UTKARSH (A Special Needs Institute and Support Centre Under Utkarsh Seva Sansthan) is a premiere institution in Patna, Bihar providing comprehensive and wide range of services to children with Autism, Down's syndrome, Cerebral Palsy and multiple disabilities through various program."
     },
     {
@@ -101,7 +101,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Sorem",
         "address": "Opp. Income Tax Flats, Sector-36-C",
         "contact": "0172 262 0704",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Dedicated wholeheartedly towards intellectually challenged children, SOREM provides academics, vocational therapy, speech therapy, sports activities, yoga, and co-curricular activities to differently-abled children."
     },
     {
@@ -109,7 +109,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "School of Hope Tamana Foundation",
         "address": "23-K, CGHS Colony, Vasant Vihar, New Delhi, Delhi 110057",
         "contact": "91-11-261515587",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Tamana Autism Centre in Delhi is a non-profit voluntary organization that follows the purpose of helping the mentally challenged. It was the first institution to recognize autism as a distinct disability. It runs a special school, diagnostic center, early intervention center, sensory integration clinic, an outreach cell, and a research cell under one roof. It has consistently ranked as the top special needs school by the Education World Schools Ranking."
     },
     {
@@ -125,7 +125,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Vision Children Rehabilitation Centre",
         "address": "No. D-14- 65/66, Rohini Sector 3, Rohini, Delhi - 110085",
         "contact": "7419593962",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Vision children Rehabilitation centre will provide the Pediatric Rehabilitation services like Physiotherapy Occupational therapy Speech therapy Special education ABA Therapy Counselling"
     },
     {
@@ -149,7 +149,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "JYOT SCHOOL FOR CHILDREN WITH AUTISM",
         "address": "Adarsh High School, Paji Ford, Opposite Big G Margao, Aquem, Goa, 403601",
         "contact": "91-9404757171",
-        "category": "Austism",
+        "category": "Autism",
         "about": "JYOT SCHOOL FOR CHILDREN WITH AUTISM is a school in the DAVORLIM village of SALCETE block, South Goa district,Goa. This school has Primary with Upper Primary classes. This is a Co-educational school in which both boys and girls are studying."
     },
     {
@@ -157,7 +157,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Disha Special School and Autism Centre",
         "address": "Correspondence Address:- 62, Sampat Rao Colony, Alkapuri, Vadodara, Gujarat 390005, India",
         "contact": "7041732070",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Disha Special School and Autism Center is one of the Centres of Excellence for Autism and developmental disabilities in the country. The Centre provides all the required therapies by a highly committed team of qualified, trained and certified professionals under one roof. Disha has created its own benchmark by adopting evidence – based practices, World-class methodologies and State of the Art technology for each therapy."
     },
     {
@@ -173,7 +173,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Anoora Learning Center For Special Kids",
         "address": "Swati Cross Road, Navrangpura, Ahmedabad - 380009 (Near Darpan Six Road)",
         "contact": "6384464467",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Anoora is one of the best learning environment for your little one.They provide safe environment for all kids.They're good helping and encouraging us to get to our future. They have amazing curriculum which give you better understanding of how much kids abilities and strength have increased from one work out to another."
     },
     {
@@ -181,7 +181,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Pearl Special Needs Foundation",
         "address": "53 Sharadanagar Society, Vikashgruh road. Opp. Premvardhank Flats. Nr Dharnidhar Temple, Shreyas Bridge. Paldi, Ahmedabad 380 007.",
         "contact": "91-9408507008",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Pearl Special Needs Foundation is a learning centre for children and young people with varied challenged and Special Educational Needs (SEN). Our sole purpose is to provide consistent support to the differently abled population. We at Pearl strive to promote equal access and opportunity for individuals who are differently abled support them in all promotes equal access and opportunity for individuals who are differently abled and supports them in all aspects of life by enhancing their personal, social, emotional, academic, and career oriented development."
     },
     {
@@ -189,7 +189,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Ura School For Special Needs Children",
         "address": "H No.60, Block P, New Industrial Twp 5, New Industrial Township, Faridabad, Haryana 121001",
         "contact": "078388 49147",
-        "category": "Austism",
+        "category": "Autism",
         "about": " The school says We are providing Special Education, Occupational therapy, Sensory Integration Therapy, Physical therapy. Under one roof. Successfully running our vocational project KRITI, providing schooling to children with down's syndrome, autism, cerebral palsy, intellectual disability, and learning disability"
     },
     {
@@ -197,7 +197,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Chetna Welfare Society",
         "address": "Near Bohra Public School, Chawla Colony, Ballabgarh, Sohana Road, F-Block, Sanjay colony, Sector 23, Faridabad -121004",
         "contact": "0129-2249863",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Educational-cum-Vocational Association for the Disabled in Ballabgarh District, Faridabad, Haryana, India, was established in 1995 with the cherished ideals of mainstreaming the disabled children through special education so that they can become productive, responsible and live a life of equality and dignity. At present, besides the school facility for 130 severely disabled students, there is a boarding hostel for about 25 children on the premises of the school."
     },
     {
@@ -205,7 +205,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "ACE Academy",
         "address": "Sector 62, Gurgaon, Haryana",
         "contact": "8800827797",
-        "category": "Austism",
+        "category": "Autism",
         "about": "The core philosophy of ACE lies in the belief that individuals of varying abilities can be taught functional skills and communication to lead independent, productive, and rewarding lives as adults."
     },
     {
@@ -221,7 +221,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Hindimachal Therapy Centre",
         "address": "Arya Samaj School Street, Akhara Bazaar, Kullu, HP 175101",
         "contact": "1902-222-847",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Our mission is to catter the needs of disabled children in Kullu district, offering physiotherapy, occupational services, special education and speech therapy services together with adapted physical activities, on a permanent basis in Kullu district - free of cost for all children."
     },
     {
@@ -229,7 +229,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Ngoenga school",
         "address": "94J2+GC3, Sahastradhara Rd, Kulhan, Sindhauwali Dhaura",
         "contact": "91 135 2607688",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Ngoenga school is the one and only kind of special school for Tibetan community in exile directly run and managed by Tibetan Voluntary Health Association, through Department of Health, Central Tibetan Administration, Dharamsala. It renders rehabilitation and residential center catering mainly to the young physically and mentally challenged Tibetan refugees staying in India, Nepal, Bhutan and Tibet."
     },
     {
@@ -237,7 +237,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Aash Child Development Center",
         "address": "Bazar, House No-75, Rambhag, Akhara, Kullu, Himachal Pradesh 175101",
         "contact": "086269 80776",
-        "category": "Austism",
+        "category": "Autism",
         "about": "'Aash' means Hope and 'Samphia' means Ability in the local dialect of Kullu valley. We are committed to bringing hope to families of children with developmental disabilities by helping everyone focus on their abilities. The Aash Child Development Center was founded on 1stApril 2019 in Kullu town of Himachal Pradesh on the initiative of the Samphia Foundation. With a diverse and large inclusive vision Shruti and Rekha set up the Samphia Foundation. The Community Based Rehabilitation Program (CBRP) is an outreach program under which home based therapy services are provided to children who do not have access to the therapy center. In this program disability related awareness is spread in the community. This program is executed by Healthcare workers who are trained in the disability-specific intervention. The Healthcare workers visit child's home to provide support. The entire program is supervised by an experienced therapist. "
     },
     {
@@ -245,7 +245,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Shafaqat Special School",
         "address": "Between, SKIMS medical College, Bemina Byepass, &, Haj House Rd, Srinagar",
         "contact": "9541786821",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Voluntary Medicare Society is running this school to provide comprehensive and continuing Rehabilitation to children by therapy, training, exercise, interaction and education."
     },
     {
@@ -261,7 +261,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Sahara Special School",
         "address": "Trikuta Nagar, Jammu",
         "contact": "",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Our goal is to help the millions of parents whose children are diagnosed with Autism Spectrum Disorder to build a better life for their children."
     },
     {
@@ -269,7 +269,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Deepshikha",
         "address": "Tiji Devi Charitable Trust Complex, Opp. Aara Gate, Railway Crossing, Tatisilwai Road, Namkom, Ranchi - 834 001 (Jharkhand), INDIA",
         "contact": "91-651-6570685",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Deepshikha, Institute of Child Development and Mental Health, is a premier institute in the field of developmental disabilities i.e. Mental Retardation, Cerebral Palsy, Autism, and Multiple, and other Disabilities based in Ranchi, Jharkhand.Our focus is childhood and developmental disabilities. As the State Nodal Agency Centre (SNAC), we work within the state in collaboration with other NGOs. Deepshikha is run by a group of house wives and volunteers of Purshree, the parent organization. Deepshikha Aims to work for the child Development and Mental Health by developing models of clinical services, Education, Skill Training and Advocacy."
     },
     {
@@ -277,7 +277,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Sparsh",
         "address": "Bam Bam Baba Path, Bilasi Town, Deoghar, Jharkhand 814122",
         "contact": "094721-62409",
-        "category": "Austism",
+        "category": "Autism",
         "about": "'SPARSH' is a special school for children with mental retardation, Cerebral palsy, student with Autism and Multiple Disabilities. The foundation of the school is the belief that every child, regardless of ability, income, status or social background deserves the best Possible education. At 'Sparsh' a team of highly trained and dedicated professionals works with each child to design the individual programme she requires to develop her full potential. The team approach ensures that the WHOLE CHILD is considered : emotional, social and physical development are as important as intellectual. Our staff members include trained Special Educators, a developmental Therapist and Language Specialists, as well as trained teachers, helpers and volunteers."
     },
     {
@@ -285,7 +285,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Santhal Special School",
         "address": "9C8J+R58, Model Town, Bareilly, Uttar Pradesh 243005",
         "contact": "099730 73247",
-        "category": "Austism",
+        "category": "Autism",
         "about": "A life centred approach to curriculum planning to meet the needs of child and family .An eclectic combination of different approaches to develop a holistic approach to meet individual needs. Some of the approaches on which intervention for the autistic is based are TEACCH, ABA (with small group of students), and the therapeutic use of drama, music, dance, horse riding, and yoga. The behavior management strategies are designed according to individual needs. Positive reinforcement techniques are commonly used for teaching."
     },
     {
@@ -293,7 +293,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Asha Kiran Special Needs School",
         "address": "No 10-26, Esther Gardens, Jayanthi Nagar - Horamavu,Bangalore 560 016, Karnataka, India",
         "contact": "91 73494 52237",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Asha Kiran in Bangalore is a special school catering to children with autism, ADHD, Hearing impairment, dyslexia, mental challenges, and learning disabilities. It also educates disadvantaged children hailing from an economically weak background. Asha Kiran Special Needs School is a school with a difference as it aims to create general awareness to ensure these students can be integrated into society."
     },
     {
@@ -301,7 +301,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Bubbles Centre for Autism",
         "address": "No. 102, Bidarahalli Hobli, Beside Shaneeshwara Temple, Bileshivale, Karnataka 560077",
         "contact": "080 2846 5336",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Biswa Gouri Charitable Trust was formed in 2009 with a school (Bubbles Centre for Autism) for children with autism and intellectual challenges. BGCT took the next step during 2017 when half of the children reached 15 years and faced the question of “What next”. The step forward was conceived in the form of Pragati, towards livelihood, a skill development centre  to empower young adults towards livelihood and a life with dignity and value."
     },
     {
@@ -317,7 +317,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Brindavan Education Trust",
         "address": "607, 13th Cross, 14th Main, 2nd Phase, JP Nagar, Bangalore, Karnataka 560078",
         "contact": "80-26581692",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Brindavan aims to identify and nurture the inherent capabilities and creativity that dyslexic children often possess. We empower them to experience success and fulfil their potential in a safe and supportive learning environment."
     },
     {
@@ -325,7 +325,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Cadrre",
         "address": "T C 12/43, PMG-Plamudu Rd.,",
         "contact": "91 9207450001",
-        "category": "Austism",
+        "category": "Autism",
         "about": "It aims to transform the lives of people with Autism through best practice principles and family-centered holistic care across the lifespan."
     },
     {
@@ -333,7 +333,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "VKM Special School",
         "address": "P.O.Puramannur, Valanchery,Malappuram",
         "contact": "9495232060",
-        "category": "Austism",
+        "category": "Autism",
         "about": "The focus areas of the Institute include Early Identification, Remedial Correction, Rehabilitative Intervention, Special Education, Vocational Training and Placement for children with various Neuro- developmental Disabilities such as Cerebral Palsy, Autism and other Intellectually & Physically Challenged."
     },
     {
@@ -341,7 +341,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Swasraya School",
         "address": "P.O. Kuttur, Thrissur",
         "contact": "487 2334897",
-        "category": "Austism",
+        "category": "Autism",
         "about": "To contribute without political,religious or social prejudice, to the full social recognition of the rights of children specifically children / persons with a DISABILITY, especially the RIGHT TO EDUCATION"
     },
     {
@@ -357,7 +357,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "NAV JYOTI SPECIAL SCHOOL",
         "address": "Katangi Bye Pass Road Rimjha",
         "contact": "9575367332",
-        "category": "Austism",
+        "category": "Autism",
         "about": "To impart Vocational training, care and rehabilitation so that the adult with mental retardation can be achieve various work related skills."
     },
     {
@@ -365,7 +365,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Lakshya Special School",
         "address": "226-A, Raisen Rd, Indrapuri C sector, Sector C, Indrapuri",
         "contact": "074157 26148",
-        "category": "Austism",
+        "category": "Autism",
         "about": "They work with children and adults with Autism, Down Syndrome, Cerebral Palsy and other intellectual and developmental disabilities."
     },
     {
@@ -373,7 +373,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Jyoti Special School",
         "address": "Bhopal, Patel Nagar,",
         "contact": "094259 16660",
-        "category": "Austism",
+        "category": "Autism",
         "about": "They are designed to cater to the educational needs of children and young adults with disabilities or special needs. They offer specialized programs and support services to help students with various challenges, such as intellectual disabilities, autism spectrum disorders, physical disabilities, and sensory impairments."
     },
     {
@@ -381,7 +381,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Udaan",
         "address": "15/1, Kanadia Rd, Sector A, Mahavir Nagar, Indore,",
         "contact": "98883-34053",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Udaan aims is to find some talent in each student and polish their abilities in order to make them self sufficient. It is done by involving the children in various activities and by keen observation on them."
     },
     {
@@ -389,7 +389,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "TABIS- ADITYA BIRLA INTEGRATED SCHOOL",
         "address": "162, 164, Dr Dadabhai Naoroji Rd, opposite CST Station, Azad Maidan, Fort, Mumbai, Maharashtra 400001",
         "contact": "022 2206 1451",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Inspiring potential to create happy, confident, balanced, and independent learners whilst nurturing the qualities of amity, bravery, integrity, and sincerity.We seek to build a body of knowledge & expertise in the area of special learning needs to empower parents, teachers, and professionals in this field with individualized educational plans, information services, resources, guidance, and therapeutic interventions."
     },
     {
@@ -397,7 +397,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "SPJ SADHANA SCHOOL",
         "address": "XR94+WJQ, Dr. Rosendo Rideiro Children's Complex Sophia College Campus, Bhulabhai Desai Ro, Mumbai, Maharashtra 400026",
         "contact": "022 2351 7913",
-        "category": "Austism",
+        "category": "Autism",
         "about": "SPJ Sadhana School in South Mumbai facilitates educational, vocational, and therapeutic development for mentally-challenged students with multiple disabilities. The non-residential school is among the top-ranking special schools in the country. that trains people with special needs. It also offers polytechnic programmes for mentally-challenged adults."
     },
     {
@@ -413,7 +413,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Maharashtra Dyslexia Association",
         "address": "2R4V+V52, Court Ln, Dadar East, Mumbai, Maharashtra 400014",
         "contact": "022 2556 5754",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Maharashtra Dyslexia Association is a not-for-profit organisation committed to securing the rights of students with Dyslexia (also known as a 'Specific Learning or Language Disability') to an appropriate education. MDA was started in March 1996 by a group of parents and professionals with a view to creating awareness about Dyslexia within the educational community and the general public, and advocating the rights of these students."
     },
     {
@@ -429,7 +429,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Ibadat Special School",
         "address": "7-c ,sant avenue,near govt.t.b.hospital,radha swami satsang bhawan, amritsar",
         "contact": "9356170007",
-        "category": "Austism",
+        "category": "Autism",
         "about": " 'Ibadat where helping is worship' is a Non-Profit Organization working in the field of disability and development. The Bedrock of our programme is our fundamental belief 'DAYA NAHI AWSAR DO' which means 'NO MERCY GIVE OPPORTUNITY'. It is our belief that everyone has a right to access basic health care and education irrespective of disability, gender, class or caste. Even we address the problems of vulnerable groups with disabilities which most likely get excluded and discriminated in this cosmopolitan India."
     },
     {
@@ -445,7 +445,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Darpan Center of Autsim",
         "address": "80,Gurdev nagar , Ludhiana",
         "contact": "9592088463",
-        "category": "Austism",
+        "category": "Autism",
         "about": "It has a supportive and friendly staff and the latest medical know how to help the patients.The clinic abides by all the necessary safety protocols,including covid 19 precautionary measures"
     },
     {
@@ -461,7 +461,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Sambhav School for Autism & Multiple Disability",
         "address": "28 Kasturba Nagar, Nirman Nagar, Jaipur (Raj.)",
         "contact": "093093 74871",
-        "category": "Austism",
+        "category": "Autism",
         "about": " It is speciliased in offering early intensive program (one-on-one session) for pre-school and primary age children .It aims at  providing differential curriculums which can meet each child's individual educational plan ,aim allowing children to integrate into main stream schools or when impossible, continue to support their ongoing needs ,aim providing parent education and building a partnership between parents and staff."
     },
     {
@@ -469,7 +469,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Lakshay Special Education School Jaipur",
         "address": "S-8c, Parivahan Nagar, Khatipura Road Opp. HP Petrol Pump, near Jharkhand Mode, Jaipur, Rajasthan 302012",
         "contact": "092145 99854",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Lakshay School is one of the best special education schools in Jaipur, Rajasthan. We are nurturing and developing slow learner children with Autism, CP, MR and ADHD. Our programme is play & fun based as it allows a child to experience multi-sensory approach of learning. Our aim is to make children increasingly independent of their accompanying adults, develop their daily routines and learn to positively interact and develop concentration skills. Lakshay is lead by Mrs. Meena Rajput who is working in this field since 2007"
     },
     {
@@ -477,7 +477,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "AWWA Asha School,",
         "address": "B-1, Military Hospital Road, Paota, Jodhpur (Rajasthan).",
         "contact": "9414180787",
-        "category": "Austism",
+        "category": "Autism",
         "about": "AWWA Asha School, Jodhpur was established in Apr 1999 with the aim of providing educational opportunity to the physically and mentally challenged children of personnel serving in the armed forces and further extended to civilian as a noble gesture with a view to make them self-dependent and useful members of the society. Subscribed with 56 Special Children categorized into Educable, Trainable and Custodial groups under a dedicated and well qualified team of Special Educators, Speech Therapist and Physiotherapist."
     },
     {
@@ -493,7 +493,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Kaumaram Prashanthi Academy",
         "address": "Kaumaram Prashanthi Academy No 1. Bungalow Street Extension, Tirupur - 641602",
         "contact": "7811986633",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Founders of KPA are Mrs. Annapoorna Jayaram and Mrs. Deepa Mohanraj, both are parents of children who have special needs. Mrs. Annapoorna Jayaram brings with her the experience of working in a Canadian School for children with special needs in Kuwait and was also founder member of free school for expatriate children in Kuwait. Mrs. Deepa Mohanraj a passionate mother brings with her the zeal and the urge to serve the society and mainly to create a positive difference in the lives of children with difficulties. To facilitate every child to develop on his/her own to the full potential and to add a new dimension that enables the child to manage everyday life independently to blend with mainstream society."
     },
     {
@@ -509,7 +509,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Ayur Sukham Special School",
         "address": "No. I-1, 2nd main road, Ramapurnanagar, Athipet, Ambattur, Chennai, Tamil Nadu 600058",
         "contact": "098409 12251",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Ashirwad is the special school run by CST. Adaptive behaviour profiles of the children are drawn using Madras Developmental Programming Scale (MDPS). Individualized Education Plan (IEP) is developed and followed for each child based on the behaviour profile. The IEP is written based on a multi-modal approach which includes physiotherapy, occupational therapy, speech therapy and behaviour modification interventions. This ensures that each child is met at their skill-level and is trained progressively. The Individualized Education Plan also enables us to objectively track progress of the children every quarter and every year. The school has a professional team of special educators, physiotherapist, occupational therapist, speech therapist and psychologist. Three of the boards of trustees have relevant experience to guide and contribute towards managing the professional needs"
     },
     {
@@ -517,7 +517,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "smiles foundation",
         "address": "Plot 234, Hno 10/88, Satyanarayana colony, Near saibaba temple, nagaram, keesara, Rangareddy District, secunderabad, smilesfoundation.in, autismsupport and autism.school, hyderabad, Telangana 500083",
         "contact": "098495 59676",
-        "category": "Austism",
+        "category": "Autism",
         "about": "SMILES FOUNDATION IS AN NGO SUPPORTING AUTISM AND INTELLECTUAL DISABILITY CHILDREN. SMILES AUTISM WELLNESS AND RESEARCH CENTRE CONTINUES IT EFFORTS IN DEVELOPING AUTISM EARLY INTERVENTION SYSTEM AND ADVANCED ARTIFICIAL INTELLIGENCE INCLUDED SOLUTION TO PREDICT SEIZERS AND EPILEPSY IN ADVANCE IN CHILDREN. SMILES AUTISM WELLNESS CENTRE IS A MEMBER OF WORLD AUTISM SOCIETY"
     },
     {
@@ -525,7 +525,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Pavani Autism Special Schools",
         "address": "1-6-39/60,Road No20,Dinakar Nagar, West Venkatapuram, Alwal, Secunderabad, Telangana 500015",
         "contact": " 099853 81174",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Pavani autism, Special schools in Secunderabad Hyderabad was established in West Venkatapuram, Secunderabad, Telangana, with the holistic aim of helping the special need children in the community. The faculty of  school shares the same vision and enthusiasm. They are all well qualified to provide special education. They also pride ourselves for creating a positive and healthy environment for the students. They have an excellent track record of successfully rehabilitating the past students"
     },
     {
@@ -533,7 +533,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "SRI UNNATI AUTISM SCHOOL DAY CUM RESIDENCIAL",
         "address": "just at the turn of K7 BAKERY, 45/1G, Dinakar Nagar, Alwal, Secunderabad,Hyderabad Telangana 500010 ph no91548, 88889",
         "contact": "091548 88889",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Sri unnathi autism residential ashram is a Residential Centre in Hyderabad. They provide vocational training to kids dealing with intellectual and developmental disabilites like Autism, Cerebral Palsy and Autism. They have candle making workshops and also teach students Gardening and organic farming"
     },
     {
@@ -549,7 +549,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "Mata Bhagwanti Chadha Niketan",
         "address": "MBCN A-12 Sector -132",
         "contact": "91 9711000843",
-        "category": "Austism",
+        "category": "Autism",
         "about": "Provide rehabilitation and personal development services and support our students and trainees and provide them with what they need in every area of their lives, maximizing their integration in the main stream."
     },
     {
@@ -557,7 +557,7 @@ List<Map<String, dynamic>> rehabData = const [
         "name": "ArambH",
         "address": "8/218 Khajuri colony, Sudhakar Road, Pandeypur, Varanasi",
         "contact": "7905513426",
-        "category": "Austism",
+        "category": "Autism",
         "about": "We are a team of trained and certified Special Educator and Occupational Therapists. We specialize in dealing with persons affected with Autism and related special need problems."
     },
     {
