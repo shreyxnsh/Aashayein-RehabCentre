@@ -12,11 +12,13 @@ import 'package:rehabcentre/src/constants/image_strings.dart';
 import 'package:rehabcentre/src/features/screens/categories/AutismScreen.dart';
 import 'package:rehabcentre/src/features/screens/categories/LearningScreen.dart';
 import 'package:rehabcentre/src/features/screens/categories/SpeechScreen.dart';
+import 'package:rehabcentre/src/features/screens/dashboard/widgets/category_card.dart';
 
 import 'package:rehabcentre/src/features/screens/profile/profile_screen.dart';
 import 'package:rehabcentre/src/utils/DummyScreen.dart';
 import 'package:rehabcentre/src/utils/rehabcentre.dart';
 
+import '../../../constants/sizes.dart';
 import '../../../repositories/authentication_repository.dart';
 import '../../controllers/profile_controller.dart';
 import '../../models/user_model.dart';
@@ -116,14 +118,12 @@ class Dashboard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 20,
-                    ),
+                    
                      
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Categories',
+                        'Disabilities',
                         style:
                             TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),
                       ),
@@ -133,117 +133,61 @@ class Dashboard extends StatelessWidget {
                     ),
 
                     // now create a list view which will be horizontally scrollable with 4 cards with icons title and subtitle and it should have on tap function too to navigate to different screens
-                    SizedBox(
-                      height: 120,
-                      child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Get.to(() => AutismScreen());
-                            },
-                            child: Container(
-                              width: 170,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: tCardBgColor,
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Image.asset(tAustismImage,height: 30,width: 30,),
-                                  Text(
-                                    "Autism",
-                                    style: TextStyle(
-                                        fontFamily: 'PoppinsMedium',
-                                        fontSize: 18),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Get.to(() => SpeechScreen());
-                            },
-                            child: Container(
-                              width: 170,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: tCardBgColor,
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-
-                                  Image.asset(tSpeechImage,height: 30,width: 30,),
-                                  Text(
-                                    "Speech",
-                                    style: TextStyle(
-                                        fontFamily: 'PoppinsMedium',
-                                        fontSize: 18),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Get.to(() => LearningScreen());
-                            },
-                            child: Container(
-                              width: 170,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: tCardBgColor,
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-
-                                  Image.asset(tLearningImage,height: 30,width: 30,),
-                                  Text(
-                                    "Learning Disability",
-                                    style: TextStyle(
-                                        fontFamily: 'PoppinsMedium',
-                                        fontSize: 16),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                        ],
-                      ),
-                    ),
+                    CategoryCard(),
                     SizedBox(
                       height: 20,
                     ),
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Recent Activities',
+                        'Customer Support',
                         style:
                             TextStyle(fontFamily: 'PoppinsBold', fontSize: 18),
                       ),
                     ),
                     SizedBox(
                       height: 20,
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        width: 200,
+                        
+                          child: ElevatedButton(
+                                  onPressed: () {
+                                    
+                                  },
+                                  // i want a leading icon in this elevated button
+                    
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                  
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Icon(
+                                          Icons.chat,
+                                          color: tDarkColor,
+                                        ),
+                                        Text(
+                                          'Chat with us',
+                                          style: TextStyle(
+                                            fontFamily: 'PoppinsBold',
+                                            color: tDarkColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    
+                                    shape: StadiumBorder(),
+                                    foregroundColor: tWhiteColor,
+                                    backgroundColor: tPrimaryColor,
+                                    padding: EdgeInsets.symmetric(vertical: tButtonHeight),
+                                  )),
+                        
+                      ),
                     ),
 
 
@@ -261,3 +205,5 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
+
+
