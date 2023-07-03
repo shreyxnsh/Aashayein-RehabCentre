@@ -8,11 +8,17 @@ import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
 
 import '../../models/centre_model.dart';
+import 'CentreDetailsScreen.dart';
 
-class LearningScreen extends StatelessWidget {
+class LearningScreen extends StatefulWidget {
   const LearningScreen({super.key});
 
-  
+  @override
+  State<LearningScreen> createState() => _LearningScreenState();
+}
+
+class _LearningScreenState extends State<LearningScreen> {
+  final TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +98,7 @@ class LearningScreen extends StatelessWidget {
                             ),
                           onTap: () {
                             // Go to the details page
-                            Get.toNamed('/details', arguments: centre);
+                            Get.to(() => CentreDetailsScreen(centre: centre));
                           },
                           trailing: Text(centre.state, style: TextStyle(
                               fontFamily: 'PoppinsMedium',

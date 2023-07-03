@@ -8,10 +8,17 @@ import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
 
 import '../../models/centre_model.dart';
+import 'CentreDetailsScreen.dart';
 
-class AutismScreen extends StatelessWidget {
+class AutismScreen extends StatefulWidget {
   const AutismScreen({super.key});
 
+  @override
+  State<AutismScreen> createState() => _AutismScreenState();
+}
+
+class _AutismScreenState extends State<AutismScreen> {
+  final TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +37,7 @@ class AutismScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Autism Centres",
+          "Autism Disability",
           style: TextStyle(
             fontFamily: 'PoppinsBold',
             color: Colors.black,
@@ -38,15 +45,14 @@ class AutismScreen extends StatelessWidget {
           ),
         ),
       ),
-
-
       body: Center(
         child: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
               .collection('RehabCentre')
-              .where('category', isEqualTo: 'Austism')
+              .where('category', isEqualTo: 'Autism')
               .snapshots(),
-          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             }
@@ -57,53 +63,51 @@ class AutismScreen extends StatelessWidget {
 
             // Data snapshot has been received
             final List<DocumentSnapshot> documents = snapshot.data!.docs;
-            
+
             // Iterate over the documents and create a ListView
             return ListView.builder(
               itemCount: documents.length,
               itemBuilder: (BuildContext context, int index) {
                 final centre = CentreModal.fromSnapshot(documents[index]);
-                return 
-                   Padding(
-                     padding: const EdgeInsets.all(12),
-                     child: Card(
-                      
-                        child: ListTile(
-                          contentPadding: EdgeInsets.all(10),
-                          leading: Image.asset(tAustismImage),
-                          title: Expanded(
-                            child: Text(centre.name,
-                            
-                            style: TextStyle(
-                              fontFamily: 'PoppinsBold',
-                              fontSize: 14,
-                            ),
-                            ),
-                            
-                            
-                            ),
-                          subtitle: Expanded(child: Text(centre.contact,
-                          
+                return Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Card(
+                    child: ListTile(
+                      contentPadding: EdgeInsets.all(10),
+                      leading: Image.asset(tAustismImage),
+                      title: Expanded(
+                        child: Text(
+                          centre.name,
                           style: TextStyle(
-                              fontFamily: 'PoppinsMedium',
-                              fontSize: 12,
-                            ),)
-                            ),
-                          onTap: () {
-                            // Go to the details page
-                            Get.toNamed('/details', arguments: centre);
-                          },
-                          trailing: Text(centre.state, style: TextStyle(
-                              fontFamily: 'PoppinsMedium',
-                              fontSize: 12,
-                            ),),
-                          tileColor: tCardBgColor,
-                          // Add more fields as required
+                            fontFamily: 'PoppinsBold',
+                            fontSize: 14,
+                          ),
                         ),
-                      
-                                     
-                                   ),
-                   );
+                      ),
+                      subtitle: Expanded(
+                          child: Text(
+                        centre.contact,
+                        style: TextStyle(
+                          fontFamily: 'PoppinsMedium',
+                          fontSize: 12,
+                        ),
+                      )),
+                      onTap: () {
+                        // go to centre details screen
+                        Get.to(() => CentreDetailsScreen(centre: centre));
+                      },
+                      trailing: Text(
+                        centre.state,
+                        style: TextStyle(
+                          fontFamily: 'PoppinsMedium',
+                          fontSize: 12,
+                        ),
+                      ),
+                      tileColor: tCardBgColor,
+                      // Add more fields as required
+                    ),
+                  ),
+                );
               },
             );
           },

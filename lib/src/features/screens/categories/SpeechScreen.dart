@@ -8,10 +8,16 @@ import 'package:rehabcentre/src/constants/colors.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
 
 import '../../models/centre_model.dart';
+import 'CentreDetailsScreen.dart';
 
-class SpeechScreen extends StatelessWidget {
+class SpeechScreen extends StatefulWidget {
   const SpeechScreen({super.key});
 
+  @override
+  State<SpeechScreen> createState() => _SpeechScreenState();
+}
+
+class _SpeechScreenState extends State<SpeechScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +36,7 @@ class SpeechScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Speech and Hearing Centres",
+          "Speech and Hearing Disability",
           style: TextStyle(
             fontFamily: 'PoppinsBold',
             color: Colors.black,
@@ -91,7 +97,7 @@ class SpeechScreen extends StatelessWidget {
                             ),
                           onTap: () {
                             // Go to the details page
-                            Get.toNamed('/details', arguments: centre);
+                            Get.to(() => CentreDetailsScreen(centre: centre));
                           },
                           trailing: Text(centre.state, style: TextStyle(
                               fontFamily: 'PoppinsMedium',
