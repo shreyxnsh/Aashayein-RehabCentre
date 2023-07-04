@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:rehabcentre/src/constants/image_strings.dart';
+import 'package:rehabcentre/src/features/screens/appointments/book_appointment_screen.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/sizes.dart';
@@ -41,31 +42,30 @@ class CentreDetailsScreen extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         elevation: 0,
-        child: 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48.0 , vertical: 18.0),
-            child: SizedBox(
-              width: 150,
-              child: ElevatedButton(
-                            onPressed: () {
-                              
-                            },
-                            child: Text(
-                              'Book Appointment',
-                              style: TextStyle(
-                                fontFamily: 'PoppinsBold',
-                                color: tDarkColor,
-                              ),
-                            ),
-                            style: OutlinedButton.styleFrom(
-                              shape: StadiumBorder(),
-                              foregroundColor: tWhiteColor,
-                              backgroundColor: tPrimaryColor,
-                              padding: EdgeInsets.symmetric(vertical: tButtonHeight),
-                            )),
-            ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 18.0),
+          child: SizedBox(
+            width: 150,
+            child: ElevatedButton(
+                onPressed: () {
+                  // go to the next screen
+                  Get.to(() => BookAppointmentScreen());
+                },
+                child: Text(
+                  'Book Appointment',
+                  style: TextStyle(
+                    fontFamily: 'PoppinsBold',
+                    color: tDarkColor,
+                  ),
+                ),
+                style: OutlinedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  foregroundColor: tWhiteColor,
+                  backgroundColor: tPrimaryColor,
+                  padding: EdgeInsets.symmetric(vertical: tButtonHeight),
+                )),
           ),
-        
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -87,7 +87,6 @@ class CentreDetailsScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontFamily: 'PoppinsBold',
-                                
                               ),
                             ),
                             SizedBox(
@@ -98,8 +97,6 @@ class CentreDetailsScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: 'PoppinsMedium',
-                                
-                                
                               ),
                             ),
                             SizedBox(
@@ -110,8 +107,6 @@ class CentreDetailsScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: 'PoppinsMedium',
-                                
-                                
                               ),
                             ),
                           ],
@@ -128,21 +123,21 @@ class CentreDetailsScreen extends StatelessWidget {
                             top: 0,
                             right: 0,
                             child: GestureDetector(
-                              onTap: (){},
+                              onTap: () {},
                               child: Container(
                                 width: 35,
-                                height: 35, 
+                                height: 35,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
                                   color: tPrimaryColor,
                                 ),
                                 child: Icon(
-                                 Icons.verified,
+                                  Icons.verified,
                                   size: 20,
                                   color: Colors.black,
                                 ),
                               ),
-                            ),    
+                            ),
                           ),
                         ],
                       ),
@@ -165,31 +160,28 @@ class CentreDetailsScreen extends StatelessWidget {
                   //     fontWeight: FontWeight.bold,
                   //   ),
                   // ),
-                  
+
                   Text(
                     '${centre.about}',
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontFamily: 'PoppinsMedium'
-                    ),
+                    style: TextStyle(fontSize: 13, fontFamily: 'PoppinsMedium'),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Row(
                     children: [
-                      Icon(LineAwesomeIcons.phone, size: 30,),
-                      
+                      Icon(
+                        LineAwesomeIcons.phone,
+                        size: 30,
+                      ),
                       SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    '${centre.contact}',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'PoppinsMedium'
-                    ),
-                  ),
+                        width: 5,
+                      ),
+                      Text(
+                        '${centre.contact}',
+                        style: TextStyle(
+                            fontSize: 15, fontFamily: 'PoppinsMedium'),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -198,52 +190,34 @@ class CentreDetailsScreen extends StatelessWidget {
                   Row(
                     children: [
                       Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: Alignment.topLeft,
-                            child: Icon(
-                              LineAwesomeIcons.address_book_1, size: 30, 
-                              )
-                              ),
+                              alignment: Alignment.topLeft,
+                              child: Icon(
+                                LineAwesomeIcons.address_book_1,
+                                size: 30,
+                              )),
                         ],
                       ),
-                      
                       SizedBox(
-                    width: 5,
-                  ),
-                  Expanded(
-                    child: Text(
-                      '${centre.address}',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontFamily: 'PoppinsMedium'
+                        width: 5,
                       ),
-                    ),
-                  ),
+                      Expanded(
+                        child: Text(
+                          '${centre.address}',
+                          style: TextStyle(
+                              fontSize: 13, fontFamily: 'PoppinsMedium'),
+                        ),
+                      ),
                     ],
                   ),
-              
-                  
-                  
-                  
-                  
-      
+
                   // Add more details as needed
                 ],
-                
               ),
-
-              
             ),
-
-            
-    
-            
-            
           ],
-
-          
         ),
       ),
     );
