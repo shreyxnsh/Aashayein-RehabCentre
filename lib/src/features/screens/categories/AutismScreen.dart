@@ -90,6 +90,8 @@ class _AutismScreenState extends State<AutismScreen> {
                         style: TextStyle(
                           fontFamily: 'PoppinsMedium',
                           fontSize: 12,
+
+                        
                         ),
                       )),
                       onTap: () {
