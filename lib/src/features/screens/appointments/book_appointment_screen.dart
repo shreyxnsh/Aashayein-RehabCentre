@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -9,172 +7,184 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../../models/centre_model.dart';
 
 class BookAppointmentScreen extends StatefulWidget {
-  const BookAppointmentScreen({super.key});
+  final CentreModal centre;
+
+  const BookAppointmentScreen({required this.centre});
 
   @override
   State<BookAppointmentScreen> createState() => _BookAppointmentScreenState();
 }
 
 class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
+  DateTime? selectedDate;
+  TimeOfDay? selectedTime;
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? pickedDate = await showCupertinoModalPopup<DateTime>(
+      context: context,
+      builder: (BuildContext context) {
+        return Stack(
+          children: [
+            ModalBarrier(
+              color: Colors.black.withOpacity(0.5),
+              dismissible: false,
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
+                ),
+                child: CupertinoDatePicker(
+                  mode: CupertinoDatePickerMode.date,
+                  initialDateTime: DateTime.now(),
+                  minimumDate: DateTime.now().subtract(Duration(days: 1)),
+                  maximumYear: 2100,
+                  onDateTimeChanged: (DateTime newDate) {
+                    setState(() {
+                      selectedDate = newDate;
+                    });
+                  },
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (pickedDate != null && pickedDate != selectedDate) {
+      setState(() {
+        selectedDate = pickedDate;
+      });
+    }
+  }
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? pickedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            colorScheme: ColorScheme.light(
+              primary: Color(0xFFFFE400),
+              onPrimary: Colors.black,
+            ),
+            textSelectionTheme: TextSelectionThemeData(
+              selectionColor: Colors.black,
+              cursorColor: Colors.black,
+              selectionHandleColor: Colors.black,
+            ),
+          ),
+          child: child ?? Placeholder(),
+        );
+      },
+    );
+
+    if (pickedTime != null && pickedTime != selectedTime) {
+      setState(() {
+        selectedTime = pickedTime;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Book Appointment'),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () {
+            // go to the previous screen
+            Get.back();
+          },
+          icon: Icon(
+            LineAwesomeIcons.angle_left,
+            color: Colors.black,
+          ),
+        ),
+        title: Text(
+          "Book Appointment",
+          style: TextStyle(
+            fontFamily: 'PoppinsBold',
+            color: Colors.black,
+            fontSize: 18,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Centre Name: ${widget.centre.name}',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Centre Address: ${widget.centre.address}',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () => _selectDate(context),
+                    child: Text('Select Date'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFFFFE400),
+                      onPrimary: Colors.black,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  selectedDate != null
+                      ? Text(
+                          'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}',
+                          style: TextStyle(fontSize: 18),
+                        )
+                      : Container(
+                          child: Text('No date selected'),
+                        ),
+                  SizedBox(height: 24),
+                  ElevatedButton(
+                    onPressed: () => _selectTime(context),
+                    child: Text('Select Time'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFFFFE400),
+                      onPrimary: Colors.black,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  selectedTime != null
+                      ? Text(
+                          'Selected Time: ${selectedTime!.format(context)}',
+                          style: TextStyle(fontSize: 18),
+                        )
+                      : Container(
+                          child: Text('No time selected'),
+                        ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-// class BookAppointmentScreen extends StatefulWidget {
-//   final CentreModal centre;
-
-//   const BookAppointmentScreen({required this.centre});
-
-//   @override
-//   // ignore: library_private_types_in_public_api
-//   _BookAppointmentScreenState createState() => _BookAppointmentScreenState();
-// }
-
-// class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
-//   DateTime? selectedDate;
-//   TimeOfDay? selectedTime;
-
-//   Future<void> bookAppointment() async {
-//     if (selectedDate == null || selectedTime == null) {
-//       showDialog(
-//         context: context,
-//         builder: (context) {
-//           return AlertDialog(
-//             title: Text('Incomplete Selection'),
-//             content: Text('Please select both date and time.'),
-//             actions: [
-//               TextButton(
-//                 onPressed: () {
-//                   Navigator.of(context).pop();
-//                 },
-//                 child: Text('OK'),
-//               ),
-//             ],
-//           );
-//         },
-//       );
-//       return;
-//     }
-
-//     try {
-//       // Format date and time
-//       String formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate!);
-//       String formattedTime = selectedTime!.format(context);
-
-//       // Store appointment data in Firestore
-//       await FirebaseFirestore.instance.collection('Appointments').add({
-//         'rehabCenter': widget.centre.name,
-//         'date': formattedDate,
-//         'time': formattedTime,
-//       });
-
-//       // Show success message or perform any additional actions
-//       showDialog(
-//         context: context,
-//         builder: (context) {
-//           return AlertDialog(
-//             title: Text('Appointment Booked'),
-//             content: Text('Your appointment has been successfully booked.'),
-//             actions: [
-//               TextButton(
-//                 onPressed: () {
-//                   Navigator.of(context).pop();
-//                 },
-//                 child: Text('OK'),
-//               ),
-//             ],
-//           );
-//         },
-//       );
-//     } catch (e) {
-//       // Show error message or handle the error
-//       showDialog(
-//         context: context,
-//         builder: (context) {
-//           return AlertDialog(
-//             title: Text('Error'),
-//             content: Text('An error occurred. Please try again.'),
-//             actions: [
-//               TextButton(
-//                 onPressed: () {
-//                   Navigator.of(context).pop();
-//                 },
-//                 child: Text('OK'),
-//               ),
-//             ],
-//           );
-//         },
-//       );
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Book Appointment'),
-//       ),
-//       body: Padding(
-//         padding: EdgeInsets.all(20.0),
-//         child: Column(
-//           children: [
-//             ListTile(
-//               title: Text('Select Date'),
-//               subtitle: selectedDate != null
-//                   ? Text(DateFormat('yyyy-MM-dd').format(selectedDate!))
-//                   : Text('No date selected'),
-//               trailing: Icon(Icons.calendar_today),
-//               onTap: () async {
-//                 final DateTime? pickedDate = await showDatePicker(
-//                   context: context,
-//                   initialDate: DateTime.now(),
-//                   firstDate: DateTime.now(),
-//                   lastDate: DateTime.now().add(Duration(days: 365)),
-//                 );
-
-//                 if (pickedDate != null) {
-//                   setState(() {
-//                     selectedDate = pickedDate;
-//                   });
-//                 }
-//               },
-//             ),
-//             SizedBox(height: 20),
-//             ListTile(
-//               title: Text('Select Time'),
-//               subtitle: selectedTime != null
-//                   ? Text(selectedTime!.format(context))
-//                   : Text('No time selected'),
-//               trailing: Icon(Icons.access_time),
-//               onTap: () async {
-//                 final TimeOfDay? pickedTime = await showTimePicker(
-//                   context: context,
-//                   initialTime: TimeOfDay.now(),
-//                 );
-
-//                 if (pickedTime != null) {
-//                   setState(() {
-//                     selectedTime = pickedTime;
-//                   });
-//                 }
-//               },
-//             ),
-//             SizedBox(height: 20),
-//             ElevatedButton(
-//               onPressed: () {
-//                 bookAppointment();
-//               },
-//               child: Text('Book Appointment'),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
