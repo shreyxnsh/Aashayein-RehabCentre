@@ -47,23 +47,24 @@ class CentreDetailsScreen extends StatelessWidget {
           child: SizedBox(
             width: 150,
             child: ElevatedButton(
-                onPressed: () {
-                  // go to the next screen
-                  Get.to(() => BookAppointmentScreen());
-                },
-                child: Text(
-                  'Book Appointment',
-                  style: TextStyle(
-                    fontFamily: 'PoppinsBold',
-                    color: tDarkColor,
-                  ),
+              onPressed: () {
+                // go to the next screen
+                Get.to(() => BookAppointmentScreen(centre: centre));
+              },
+              child: Text(
+                'Book Appointment',
+                style: TextStyle(
+                  fontFamily: 'PoppinsBold',
+                  color: tDarkColor,
                 ),
-                style: OutlinedButton.styleFrom(
-                  shape: StadiumBorder(),
-                  foregroundColor: tWhiteColor,
-                  backgroundColor: tPrimaryColor,
-                  padding: EdgeInsets.symmetric(vertical: tButtonHeight),
-                )),
+              ),
+              style: OutlinedButton.styleFrom(
+                shape: StadiumBorder(),
+                foregroundColor: tWhiteColor,
+                backgroundColor: tPrimaryColor,
+                padding: EdgeInsets.symmetric(vertical: tButtonHeight),
+              ),
+            ),
           ),
         ),
       ),
