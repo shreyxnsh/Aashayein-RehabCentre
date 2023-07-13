@@ -38,7 +38,10 @@ class LoginForm extends StatelessWidget {
             TextFormField(
               // controller takes the user input to check with the database
               controller: _emailController,
-
+              onFieldSubmitted: (value) {
+                // i want to add focus on password field after user enters email
+               
+              },
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.person_outline_outlined,
@@ -96,7 +99,6 @@ class LoginForm extends StatelessWidget {
                         tSecondaryColor), // Change the button color here
                   ),
                   onPressed: () async {
-
                     final email = _emailController.text;
                     final password = _passwordController.text;
                     try {
@@ -109,10 +111,9 @@ class LoginForm extends StatelessWidget {
                       if (userCredential.user != null) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) =>  Dashboard()),
+                          MaterialPageRoute(builder: (context) => Dashboard()),
                         );
-                      }else{
+                      } else {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
