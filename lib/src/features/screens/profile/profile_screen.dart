@@ -22,6 +22,7 @@ import '../../models/user_model.dart';
 
 class ProfileScreen extends StatelessWidget {
 
+  // to fetch user details anywhere in the application
   static UserModal? userData;
 
   ProfileScreen({super.key});
