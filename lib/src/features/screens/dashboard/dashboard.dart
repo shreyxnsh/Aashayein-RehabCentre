@@ -241,7 +241,8 @@ class Dashboard extends StatelessWidget {
                                   color: tAutismCard),
                             ),
                           )
-                        ]),
+                        ]
+                        ),
 
                     SizedBox(
                       height: 15,
