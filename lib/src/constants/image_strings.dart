@@ -10,3 +10,4 @@ const String tAustismImage = "assets/images/autismicon.png";
 const String tLearningImage = "assets/images/learningicon.png";
 const String tSpeechImage = "assets/images/speechicon.png";
 const String tRBIImage = "assets/images/rbilogo.png";
+const String tAppointmentImage = "assets/images/appointment.png";
