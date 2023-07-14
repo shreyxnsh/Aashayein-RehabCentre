@@ -78,21 +78,40 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   }
 
   Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay? pickedTime = await showModalBottomSheet<TimeOfDay>(
+    final TimeOfDay? pickedTime = await showCupertinoModalPopup<TimeOfDay>(
       context: context,
       builder: (BuildContext context) {
-        return Container(
-          height: 300,
-          child: CupertinoDatePicker(
-            mode: CupertinoDatePickerMode.time,
-            initialDateTime: DateTime.now(),
-            use24hFormat: true,
-            onDateTimeChanged: (DateTime newDateTime) {
-              setState(() {
-                selectedTime = TimeOfDay.fromDateTime(newDateTime);
-              });
-            },
-          ),
+        return Stack(
+          children: [
+            ModalBarrier(
+              color: Colors.black.withOpacity(0.5),
+              dismissible: false,
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
+                ),
+                child: CupertinoDatePicker(
+                  mode: CupertinoDatePickerMode.time,
+                  initialDateTime: DateTime.now(),
+                  use24hFormat: true,
+                  onDateTimeChanged: (DateTime newDateTime) {
+                    setState(() {
+                      selectedTime = TimeOfDay.fromDateTime(newDateTime);
+                    });
+                  },
+                ),
+              ),
+            ),
+          ],  
+    
         );
       },
     );
@@ -101,6 +120,37 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
       setState(() {
         selectedTime = pickedTime;
       });
+    }
+  }
+
+  String _getMonthName(int month) {
+    switch (month) {
+      case 1:
+        return 'January';
+      case 2:
+        return 'February';
+      case 3:
+        return 'March';
+      case 4:
+        return 'April';
+      case 5:
+        return 'May';
+      case 6:
+        return 'June';
+      case 7:
+        return 'July';
+      case 8:
+        return 'August';
+      case 9:
+        return 'September';
+      case 10:
+        return 'October';
+      case 11:
+        return 'November';
+      case 12:
+        return 'December';
+      default:
+        return '';
     }
   }
 
@@ -219,63 +269,159 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                       fontFamily: 'PoppinsMedium',
                     ),
                   ),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () => _selectDate(context),
-                    child: Text('Select Date'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFFFE400),
-                      onPrimary: Colors.black,
-                    ),
+                  SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Select Date  : ',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'PoppinsMedium',
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => _selectDate(context),
+                        child: Text(
+                          'Select Date',
+                          style: TextStyle(
+                            fontFamily: 'PoppinsBold',
+                            color: tDarkColor,
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          foregroundColor: tWhiteColor,
+                          backgroundColor: tPrimaryColor,
+                          padding: EdgeInsets.symmetric(
+                              vertical: tButtonHeight,
+                              horizontal: tButtonHeight),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 16),
+                  // selectedDate != null
+                  //     ? Text(
+                  //         'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}',
+                  //         style: TextStyle(fontSize: 18),
+                  //       )
+                  //     : Container(
+                  //       alignment: Alignment.centerRight,
+                  //         child: Text('No date selected', style: TextStyle(
+                  //     fontSize: 14,
+                  //     fontFamily: 'PoppinsMedium',
+                  //   ),
+                  //   ),
+                  //       ),
+
                   selectedDate != null
-                      ? Text(
-                          'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}',
-                          style: TextStyle(fontSize: 18),
-                        )
+                      ? Container(
+                        margin: EdgeInsets.only(right: 10),
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                            '${selectedDate!.day} ${_getMonthName(selectedDate!.month)} ${selectedDate!.year}',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontStyle: FontStyle.italic,
+                              fontFamily: 'PoppinsMedium',
+                            ),
+                          ),
+                      )
                       : Container(
-                          child: Text('No date selected'),
+                          alignment: Alignment.centerRight,
+                          margin: EdgeInsets.only(right: 10),
+                          child: Text(
+                            'No date selected',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontStyle: FontStyle.italic,
+                                fontFamily: 'PoppinsMedium',
+                              ),
+                          ),
                         ),
+
                   SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () => _selectTime(context),
-                    child: Text('Select Time'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFFFE400),
-                      onPrimary: Colors.black,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Select Time  : ',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'PoppinsMedium',
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => _selectTime(context),
+                        child: Text(
+                          'Select Time',
+                          style: TextStyle(
+                            fontFamily: 'PoppinsBold',
+                            color: tDarkColor,
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          foregroundColor: tWhiteColor,
+                          backgroundColor: tPrimaryColor,
+                          padding: EdgeInsets.symmetric(
+                              vertical: tButtonHeight,
+                              horizontal: tButtonHeight),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 16),
                   selectedTime != null
-                      ? Text(
-                          'Selected Time: ${selectedTime!.format(context)}',
-                          style: TextStyle(fontSize: 18),
-                        )
+                      ? Container(
+                        alignment: Alignment.centerRight,
+                        margin: EdgeInsets.only(right: 10),
+                        child: Text(
+                            '${selectedTime!.format(context)}',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontStyle: FontStyle.italic,
+                                fontFamily: 'PoppinsBold',
+                              ),
+                          ),
+                      )
                       : Container(
-                          child: Text('No time selected'),
+                          alignment: Alignment.centerRight,
+                          margin: EdgeInsets.only(right: 10),
+                          child: Text(
+                            'No time selected',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontStyle: FontStyle.italic,
+                                fontFamily: 'PoppinsMedium',
+                              ),
+                          ),
                         ),
                   SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      // var details = await FirebaseAuth.instance.currentUser;
-                      bookAppointment();
-                     
-                    },
-                    child: Text(
-                      'Book Appointment',
-                      style: TextStyle(
-                        fontFamily: 'PoppinsBold',
-                        color: tDarkColor,
+                  Container(
+                    margin: EdgeInsets.all(30),
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        // var details = await FirebaseAuth.instance.currentUser;
+                        bookAppointment();
+                      },
+                      child: Text(
+                        'Book Appointment',
+                        style: TextStyle(
+                          fontFamily: 'PoppinsBold',
+                          color: tDarkColor,
+                        ),
                       ),
-                    ),
-                    style: OutlinedButton.styleFrom(
-                      shape: StadiumBorder(),
-                      foregroundColor: tWhiteColor,
-                      backgroundColor: tPrimaryColor,
-                      padding: EdgeInsets.symmetric(vertical: tButtonHeight),
+                      style: OutlinedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        foregroundColor: tWhiteColor,
+                        backgroundColor: tPrimaryColor,
+                        padding: EdgeInsets.symmetric(vertical: tButtonHeight),
+                      ),
                     ),
                   ),
                 ],
@@ -286,70 +432,70 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
       ),
     );
   }
-  
-  Future<void> bookAppointment() async {
-     List DataList =
-                          await AppointmentModal.getSnapshotViaEmail(
-                              ProfileScreen.userData!.email.toString());
 
-                      await UserModal.userFetch();
+  Future<void> bookAppointment() async {
+    List DataList = await AppointmentModal.getSnapshotViaEmail(
+        ProfileScreen.userData!.email.toString());
+
+    await UserModal.userFetch();
                       Map<String, dynamic> temp = {
-                        "username": ProfileScreen.userData!.fullname,
-                        "email": ProfileScreen.userData!.email,
-                        "centername": widget.centre.name,
-                        "category": widget.centre.category,
-                        "state": widget.centre.state,
-                        "contact": widget.centre.contact,
-                        "address": widget.centre.address,
-                        "date": DateFormat('yyyy-MM-dd').format(selectedDate!),
+      "username": ProfileScreen.userData!.fullname,
+      "email": ProfileScreen.userData!.email,
+      "centername": widget.centre.name,
+      "category": widget.centre.category,
+      "state": widget.centre.state,
+      "contact": widget.centre.contact,
+      "address": widget.centre.address,
+     "date": DateFormat('dd MMMM yyyy').format(selectedDate!),
                         "time": selectedTime!.format(context),
+    
                         // "time": DateTime.now().toIso8601String(),
                         "status": "pending"
                       };
 
-                      DateTime selectedDateTime = DateTime.parse(
-                          "${DateFormat('yyyy-MM-dd').format(selectedDate!)} ${selectedTime!.format(context)}:00");
+                      DateTime selectedDateTime = DateFormat('dd MMMM yyyy').parse(
+  '${DateFormat('dd MMMM yyyy').format(selectedDate!)} ${selectedTime!.format(context)}',
+);
 
-                      // check if the user has already booked an appointment
-                      for (var i in DataList) {
-                        var date = i["date"];
-                        var time = i["time"];
 
-                        DateTime appointmentTime =
-                            DateTime.parse("$date $time:00");
-                        log(appointmentTime.toIso8601String());
-                        var diff = appointmentTime
-                            .difference(selectedDateTime)
-                            .inHours;
+    // check if the user has already booked an appointment
+    for (var i in DataList) {
+      var date = i["date"];
+      var time = i["time"];
 
-                        log(diff.toString());
-                        // log(diff.inHours.toString());
-                        if ((diff >= 0 && diff < 1)) {
-                          Get.snackbar(
-                            'Appointment Error',
-                            'You have already booked an appointment at this time',
-                            snackPosition: SnackPosition.BOTTOM,
-                            backgroundColor: Colors.red.shade400,
-                            colorText: tWhiteColor,
-                            margin: EdgeInsets.all(16),
-                            borderRadius: 8,
-                            duration: Duration(seconds: 3),
-                          );
-                          return;
-                        }
-                      }
+      // DateTime appointmentTime = DateTime.parse("$date $time");
+      DateTime appointmentTime = DateFormat('dd MMMM yyyy').parse("$date $time");
 
-                      await db.collection("Appointments").add(temp);
-                      Get.snackbar(
-                        'Appointment Done',
-                        'Your appointment has been booked',
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.green.shade400,
-                        colorText: Colors.white,
-                        margin: EdgeInsets.all(16),
-                        borderRadius: 8,
-                        duration: Duration(seconds: 3),
-                      );
+      log(appointmentTime.toIso8601String());
+      var diff = appointmentTime.difference(selectedDateTime).inHours;
 
+      log(diff.toString());
+      // log(diff.inHours.toString());
+      if ((diff >= 0 && diff < 1)) {
+        Get.snackbar(
+          'Appointment Error',
+          'You have already booked an appointment at this time',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.red.shade400,
+          colorText: tWhiteColor,
+          margin: EdgeInsets.all(16),
+          borderRadius: 8,
+          duration: Duration(seconds: 3),
+        );
+        return;
+      }
+    }
+
+    await db.collection("Appointments").add(temp);
+    Get.snackbar(
+      'Appointment Done',
+      'Your appointment has been booked',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.green.shade400,
+      colorText: Colors.white,
+      margin: EdgeInsets.all(16),
+      borderRadius: 8,
+      duration: Duration(seconds: 3),
+    );
   }
 }
