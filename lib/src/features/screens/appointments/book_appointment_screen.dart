@@ -17,6 +17,7 @@ import '../../models/centre_model.dart';
 import '../profile/profile_screen.dart';
 
 class BookAppointmentScreen extends StatefulWidget {
+  // object of centre model to get particular centre data
   final CentreModal centre;
 
   const BookAppointmentScreen({required this.centre});

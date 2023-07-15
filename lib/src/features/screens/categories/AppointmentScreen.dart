@@ -64,6 +64,8 @@ class AppointmentScreen extends StatelessWidget {
 
             // Iterate over the documents and create a ListView
             return ListView.builder(
+
+              // to get all the documents which are present in the collection
               itemCount: documents.length,
               itemBuilder: (BuildContext context, int index) {
                 final appointment = AppointmentModal.fromSnapshot(documents[index]);

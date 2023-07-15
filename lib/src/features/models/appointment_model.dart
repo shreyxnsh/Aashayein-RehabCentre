@@ -59,6 +59,7 @@ class AppointmentModal {
     return appointments;
   }
 
+  // function use to call data for appointments
   static AppointmentModal fromSnapshot(DocumentSnapshot document) {
     final data = document.data() as Map<String, dynamic>;
     return AppointmentModal(
