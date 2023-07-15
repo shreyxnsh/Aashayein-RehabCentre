@@ -137,7 +137,7 @@ class Dashboard extends StatelessWidget {
                       height: 15,
                     ),
 
-                    // now create a list view which will be horizontally scrollable with 4 cards with icons title and subtitle and it should have on tap function too to navigate to different screens
+                    // now create a list view which will be horizontally scrollable with 3 cards with icons title and subtitle and it should have on tap function too to navigate to different screens
                     CategoryCard(),
                     SizedBox(
                       height: 20,
@@ -273,6 +273,8 @@ class Dashboard extends StatelessWidget {
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: 3,
                           itemBuilder: (BuildContext context, int index) {
+
+                            // variable to call appointments data from appointment modal 
                             final appointment =
                                 AppointmentModal.fromSnapshot(documents[index]);
                             return Padding(

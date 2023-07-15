@@ -19,6 +19,7 @@ class AutismScreen extends StatefulWidget {
 
 class _AutismScreenState extends State<AutismScreen> {
   final TextEditingController _searchController = TextEditingController();
+  final db = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +48,7 @@ class _AutismScreenState extends State<AutismScreen> {
       ),
       body: Center(
         child: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance
+          stream: db
               .collection('RehabCentre')
               .where('category', isEqualTo: 'Autism')
               .snapshots(),
