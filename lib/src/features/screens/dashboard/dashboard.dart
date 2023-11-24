@@ -268,6 +268,15 @@ class Dashboard extends StatelessWidget {
                         final List<DocumentSnapshot> documents =
                             snapshot.data!.docs;
 
+                            if (documents.isEmpty) {
+      // If there are no appointments, display a message.
+      return Center(
+        child: Text("No appointments booked!",
+          style: TextStyle(fontFamily: 'PoppinsMedium', fontSize: 14),
+        ),
+      );
+    }
+
                         return ListView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),

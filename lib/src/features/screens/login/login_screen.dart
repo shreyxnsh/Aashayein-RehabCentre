@@ -13,8 +13,6 @@ import 'login_form_widget.dart';
 class LoginScreen extends StatelessWidget {
    LoginScreen({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

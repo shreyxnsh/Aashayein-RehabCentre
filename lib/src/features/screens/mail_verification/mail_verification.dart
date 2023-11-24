@@ -33,13 +33,15 @@ class MailVerification extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Text(
-              'Subtitle',
-              style: TextStyle(
-                fontFamily: 'PoppinsBold',
-                fontSize: 20,
+            Center(
+              child: Text(
+                'Press Continue if you have verified your email.',
+                style: TextStyle(
+                  fontFamily: 'PoppinsBold',
+                  fontSize: 14,
+                ),
+               
               ),
-   
             ),
             SizedBox(
               height: 20,

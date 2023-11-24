@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:rehabcentre/src/features/controllers/signup_screen_controller.dart';
 import 'package:rehabcentre/src/features/models/user_model.dart';
 import 'package:rehabcentre/src/features/screens/forgot_password/forgot_password_otp/otp_screen.dart';
+import 'package:rehabcentre/src/features/screens/mail_verification/mail_verification.dart';
 
 import '../../../constants/colors.dart';
 
@@ -125,7 +126,7 @@ class SignupFormWidget extends StatelessWidget {
                         email: controller.email.text.trim(),
                         password: controller.password.text.trim(),
                       );
-                      Get.to(() => const OTPScreen());
+                      Get.to(MailVerification());
                     }
                   },
                   child: Text(
